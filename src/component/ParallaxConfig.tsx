@@ -11,6 +11,12 @@ import jonctionTwoMiddle from '../imgs/jonction_middle_two.svg';
 import jonctionTwoEdge from '../imgs/jonction_edge_two.svg';
 
 import cloudFalls from '../imgs/cloud_falls.svg';
+import jonctionThreeTop from '../imgs/jonction_top_three.svg';
+import jonctionThreeBottom from '../imgs/jonction_bottom_three.svg';
+
+import flowerdust from '../imgs/flowerdust.svg';
+
+export const NOT_RENDERED = 'NOT_RENDERED';
 
 
 export enum PageName {
@@ -49,16 +55,16 @@ export const PageCompositions: Record<PageName, PageComposition> = {
     [PageName.cloudFalls]: {
         imagesUris: {
             pictureUri : cloudFalls,
-            junctionTopUri: 'UNDEFINED',
-            junctionBottomUri: 'UNDEFINED',
+            junctionTopUri: jonctionThreeTop,
+            junctionBottomUri: jonctionThreeBottom,
             parchmentUri: parchment
         }
     },
     [PageName.flowerDust]: {
         imagesUris: {
-            pictureUri : 'UNDEFINED',
-            junctionTopUri: 'UNDEFINED',
-            junctionBottomUri: 'UNDEFINED',
+            pictureUri : flowerdust,
+            junctionTopUri: jonctionTwoMiddle,
+            junctionBottomUri: jonctionTwoEdge,
             parchmentUri: parchment
         }
     }
@@ -83,7 +89,7 @@ export enum GraphicParts {
 
   export const ParallaxConfig:  Record<Adaptive,Record<PageName, Record<GraphicParts, PageConfig>> & LayoutConfig > = {
     [Adaptive.xs]: {
-      pages:3,
+      pages:4,
       largeur: '100%',
       [PageName.neverCatch]:{
         [GraphicParts.picture]:{
@@ -91,7 +97,7 @@ export enum GraphicParts {
           speed: 0
         },
         [GraphicParts.junctionTop]:{
-          offset: 0.25,
+          offset: 0.3,
           speed: 0.1
         },
         [GraphicParts.junctionBottom]: {
@@ -100,60 +106,60 @@ export enum GraphicParts {
         },
         [GraphicParts.parchment]: {
           offset: 0.8,
-          speed: 0.2
+          speed: 0.18
         }
       },
       [PageName.fire]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0
+          offset: 1,
+          speed: 0.2
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0
+          offset: 1.8,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0
+          offset: 1.88,
+          speed: 0.15
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0
+          offset: 1.85,
+          speed: 0.18
       }
     },
       [PageName.cloudFalls]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0
+          offset: 2.2,
+          speed: 0.1
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0
+          offset: 2.9,
+          speed: 0.15
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0
+          offset: 2.96,
+          speed: 0.12
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0
+          offset: 2.98,
+          speed: 0.2
         }
       },
       [PageName.flowerDust]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 3.017,
+          speed: 0.2,
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.parchment]:{
-          offset: 0,
+          offset: 3.81,
           speed: 0,
         }
       }

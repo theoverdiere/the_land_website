@@ -6,7 +6,6 @@ import { PageName, ParallaxConfig } from "./ParallaxConfig";
 import ParallaxComposition from "./ParallaxComposition";
 
 function ParallaxComponent({children} : {children: any}) {
-
   const width: Adaptive = useAdaptiveTriggers({});
   const parallax = useRef<IParallax>(null!);
   
@@ -17,46 +16,37 @@ function ParallaxComponent({children} : {children: any}) {
             key={width}
             >
                 <ParallaxComposition >
-                    {defineProps(children,PageName.neverCatch,parallax, width)}
+                    {defineProps(children, PageName.flowerDust ,parallax ,width)}
                 </ParallaxComposition>
-
-
                 <ParallaxComposition >
-                {defineProps(children,PageName.fire,parallax, width)}
+                    {defineProps(children, PageName.cloudFalls ,parallax ,width)}
+                </ParallaxComposition>
+                <ParallaxComposition >
+                    {defineProps(children, PageName.fire, parallax, width)}
+                </ParallaxComposition>
+                <ParallaxComposition >
+                    {defineProps(children, PageName.neverCatch ,parallax ,width)}
                 </ParallaxComposition>
 
-            
-        {/* <ParallaxLayer 
-                offset={ParallaxConfig[width].picture.offset}
-                speed={ParallaxConfig[width].picture.speed}
-                style={{ display:'flex',justifyContent:'center', alignItems:'top'}} >
-                    <img src={neverCatch}/>
-        </ParallaxLayer> */}
-        {/* <ParallaxLayer 
-                offset={ParallaxConfig[width].junctionTop.offset}
-                speed={ParallaxConfig[width].junctionTop.speed}
-                style={{ display:'flex',justifyContent:'center', alignItems:'top'}}>
-                    <img src={jonctionOneTop}/>
-        </ParallaxLayer>
-        <ParallaxLayer 
-                offset={ParallaxConfig[width].junctionBottom.offset}
-                speed={ParallaxConfig[width].junctionBottom.speed}
-                style={{ display:'flex',justifyContent:'center', alignItems:'top'}}>
-                    <img src={jonctionOneBottom}/>
-        </ParallaxLayer>
-        <ParallaxLayer 
-                offset={ParallaxConfig[width].parchment.offset}
-                speed={ParallaxConfig[width].parchment.speed}
-                style={{ display:'flex',justifyContent:'center', alignItems:'top'}}>
-                    <img src={parchment}/>
-        </ParallaxLayer> */}
-     </Parallax>
+
+
+
+
+
+        </Parallax>
    )
 }
 
 
+/**
+ * Define props for the Parallax Composition
+ * @param children : the information Ref from parents
+ * @param compositionName : the name of the composition use to get offset by composition and images
+ * @param parallax 
+ * @param width 
+ * @returns 
+ */
 function defineProps(children: any, compositionName: PageName, parallax: React.MutableRefObject<IParallax>, width: Adaptive ): any {
-
     return {
         children: children, 
         width: width, 
