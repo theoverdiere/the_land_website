@@ -27,12 +27,6 @@ function ParallaxComponent({children} : {children: any}) {
                 <ParallaxComposition >
                     {defineProps(children, PageName.neverCatch ,parallax ,width)}
                 </ParallaxComposition>
-
-
-
-
-
-
         </Parallax>
    )
 }

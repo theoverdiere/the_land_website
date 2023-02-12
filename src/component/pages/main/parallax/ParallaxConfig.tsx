@@ -1,22 +1,20 @@
 import { Adaptive } from "./AdaptiveHook"
 
-import parchment from '../imgs/parchemin.svg';
+import parchment from './imgs/parchemin.svg';
 
-import neverCatch from '../imgs/never_catch.svg';
-import jonctionOneTop from '../imgs/jonction_top_one.svg';
-import jonctionOneBottom from '../imgs/jonction_bottom_one.svg';
+import neverCatch from './imgs/never_catch.svg';
+import jonctionOneTop from './imgs/jonction_top_one.svg';
+import jonctionOneBottom from './imgs/jonction_bottom_one.svg';
 
-import fire from '../imgs/fire.svg';
-import jonctionTwoMiddle from '../imgs/jonction_middle_two.svg';
-import jonctionTwoEdge from '../imgs/jonction_edge_two.svg';
+import fire from './imgs/fire.svg';
+import jonctionTwoMiddle from './imgs/jonction_middle_two.svg';
+import jonctionTwoEdge from './imgs/jonction_edge_two.svg';
 
-import cloudFalls from '../imgs/cloud_falls.svg';
-import jonctionThreeTop from '../imgs/jonction_top_three.svg';
-import jonctionThreeBottom from '../imgs/jonction_bottom_three.svg';
+import cloudFalls from './imgs/cloud_falls.svg';
+import jonctionThreeTop from './imgs/jonction_top_three.svg';
+import jonctionThreeBottom from './imgs/jonction_bottom_three.svg';
 
-import flowerdust from '../imgs/flowerdust.svg';
-
-export const NOT_RENDERED = 'NOT_RENDERED';
+import flowerdust from './imgs/flowerdust.svg';
 
 
 export enum PageName {
@@ -87,8 +85,162 @@ export enum GraphicParts {
     largeur:string
   }
 
-  export const ParallaxConfig:  Record<Adaptive,Record<PageName, Record<GraphicParts, PageConfig>> & LayoutConfig > = {
-    [Adaptive.xs]: {
+  export const ParallaxConfig: Record<Adaptive ,Record<PageName, Record<GraphicParts, PageConfig>> & LayoutConfig > = {
+
+    // Mobile Configuration
+    [Adaptive.mobileXS]: {
+      pages:4,
+      largeur: '100%',
+      [PageName.neverCatch]:{
+        [GraphicParts.picture]:{
+          offset: 0,
+          speed: 0
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 0.1,
+          speed: 0.1
+        },
+        [GraphicParts.junctionBottom]: {
+          offset: 0.8,
+          speed: 0.2
+        },
+        [GraphicParts.parchment]: {
+          offset: 0.8,
+          speed: 0.18
+        }
+      },
+      [PageName.fire]:{
+        [GraphicParts.picture]:{
+          offset: 1,
+          speed: 0.2
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 1.8,
+          speed: 0.1
+        },
+        [GraphicParts.junctionBottom]:{
+          offset: 1.88,
+          speed: 0.15
+        },
+        [GraphicParts.parchment]:{
+          offset: 1.85,
+          speed: 0.18
+      }
+    },
+      [PageName.cloudFalls]:{
+        [GraphicParts.picture]:{
+          offset: 2.2,
+          speed: 0.1
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 2.9,
+          speed: 0.15
+        },
+        [GraphicParts.junctionBottom]:{
+          offset: 2.96,
+          speed: 0.12
+        },
+        [GraphicParts.parchment]:{
+          offset: 2.98,
+          speed: 0.2
+        }
+      },
+      [PageName.flowerDust]:{
+        [GraphicParts.picture]:{
+          offset: 3.017,
+          speed: 0.2,
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 5,
+          speed: 0,
+        },
+        [GraphicParts.junctionBottom]:{
+          offset: 5,
+          speed: 0,
+        },
+        [GraphicParts.parchment]:{
+          offset: 3.81,
+          speed: 0,
+        }
+      }
+    },
+    [Adaptive.mobileS]: {
+      pages:4,
+      largeur: '100%',
+      [PageName.neverCatch]:{
+        [GraphicParts.picture]:{
+          offset: 0,
+          speed: 0
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 0.1,
+          speed: 0.1
+        },
+        [GraphicParts.junctionBottom]: {
+          offset: 0.8,
+          speed: 0.2
+        },
+        [GraphicParts.parchment]: {
+          offset: 0.8,
+          speed: 0.18
+        }
+      },
+      [PageName.fire]:{
+        [GraphicParts.picture]:{
+          offset: 1,
+          speed: 0.2
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 1.8,
+          speed: 0.1
+        },
+        [GraphicParts.junctionBottom]:{
+          offset: 1.88,
+          speed: 0.15
+        },
+        [GraphicParts.parchment]:{
+          offset: 1.85,
+          speed: 0.18
+      }
+    },
+      [PageName.cloudFalls]:{
+        [GraphicParts.picture]:{
+          offset: 2.2,
+          speed: 0.1
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 2.9,
+          speed: 0.15
+        },
+        [GraphicParts.junctionBottom]:{
+          offset: 2.96,
+          speed: 0.12
+        },
+        [GraphicParts.parchment]:{
+          offset: 2.98,
+          speed: 0.2
+        }
+      },
+      [PageName.flowerDust]:{
+        [GraphicParts.picture]:{
+          offset: 3.017,
+          speed: 0.2,
+        },
+        [GraphicParts.junctionTop]:{
+          offset: 5,
+          speed: 0,
+        },
+        [GraphicParts.junctionBottom]:{
+          offset: 5,
+          speed: 0,
+        },
+        [GraphicParts.parchment]:{
+          offset: 3.81,
+          speed: 0,
+        }
+      }
+    },
+    [Adaptive.mobileM]: {
       pages:4,
       largeur: '100%',
       [PageName.neverCatch]:{
@@ -164,308 +316,310 @@ export enum GraphicParts {
         }
       }
     },
-    [Adaptive.s]: {
-      pages:3,
+    [Adaptive.mobileL]: {
+      pages:4,
       largeur: '100%',
       [PageName.neverCatch]:{
-        [GraphicParts.picture]: {
+        [GraphicParts.picture]:{
           offset: 0,
           speed: 0
         },
-        [GraphicParts.junctionTop]: {
-          offset: 0.28,
-          speed: 0.1,
+        [GraphicParts.junctionTop]:{
+          offset: 0.3,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]: {
-          offset: 0.83,
+          offset: 0.8,
           speed: 0.2
         },
         [GraphicParts.parchment]: {
-          offset: 0.85,
+          offset: 0.8,
           speed: 0.18
         }
       },
       [PageName.fire]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 1,
+          speed: 0.2
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.8,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.88,
+          speed: 0.15
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
-        }
-      },
+          offset: 1.85,
+          speed: 0.18
+      }
+    },
       [PageName.cloudFalls]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.2,
+          speed: 0.1
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.9,
+          speed: 0.15
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.96,
+          speed: 0.12
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.98,
+          speed: 0.2
         }
       },
       [PageName.flowerDust]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 3.017,
+          speed: 0.2,
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.parchment]:{
-          offset: 0,
+          offset: 3.81,
           speed: 0,
         }
       }
     },
-    [Adaptive.m]: {
-      pages:3,
+    [Adaptive.tablette]: {
+      pages:4,
       largeur: '100%',
       [PageName.neverCatch]:{
-        [GraphicParts.picture]: {
+        [GraphicParts.picture]:{
           offset: 0,
           speed: 0
         },
-        [GraphicParts.junctionTop]: {
-          offset: 0.28,
-          speed: 0.1,
+        [GraphicParts.junctionTop]:{
+          offset: 0.3,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]: {
-          offset: 0.83,
+          offset: 0.8,
           speed: 0.2
         },
         [GraphicParts.parchment]: {
-          offset: 0.85,
+          offset: 0.8,
           speed: 0.18
         }
       },
       [PageName.fire]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 1,
+          speed: 0.2
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.8,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.88,
+          speed: 0.15
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
-        }
-      },
+          offset: 1.85,
+          speed: 0.18
+      }
+    },
       [PageName.cloudFalls]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.2,
+          speed: 0.1
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.9,
+          speed: 0.15
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.96,
+          speed: 0.12
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.98,
+          speed: 0.2
         }
       },
       [PageName.flowerDust]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 3.017,
+          speed: 0.2,
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.parchment]:{
-          offset: 0,
+          offset: 3.81,
           speed: 0,
         }
       }
     },
-    [Adaptive.l]: {
-      pages:3,
+    [Adaptive.laptop]: {
+      pages:4,
       largeur: '100%',
       [PageName.neverCatch]:{
-        [GraphicParts.picture]: {
+        [GraphicParts.picture]:{
           offset: 0,
           speed: 0
         },
-        [GraphicParts.junctionTop]: {
-          offset: 0.28,
-          speed: 0.1,
+        [GraphicParts.junctionTop]:{
+          offset: 0.3,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]: {
-          offset: 0.83,
+          offset: 0.8,
           speed: 0.2
         },
         [GraphicParts.parchment]: {
-          offset: 0.85,
+          offset: 0.8,
           speed: 0.18
         }
       },
       [PageName.fire]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 1,
+          speed: 0.2
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.8,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.88,
+          speed: 0.15
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
-        }
-      },
+          offset: 1.85,
+          speed: 0.18
+      }
+    },
       [PageName.cloudFalls]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.2,
+          speed: 0.1
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.9,
+          speed: 0.15
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.96,
+          speed: 0.12
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.98,
+          speed: 0.2
         }
       },
       [PageName.flowerDust]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 3.017,
+          speed: 0.2,
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.parchment]:{
-          offset: 0,
+          offset: 3.81,
           speed: 0,
         }
       }
     },
-    [Adaptive.xl]: {
-      pages:3,
+    [Adaptive.laptopL]: {
+      pages:4,
       largeur: '100%',
       [PageName.neverCatch]:{
-        [GraphicParts.picture]: {
+        [GraphicParts.picture]:{
           offset: 0,
           speed: 0
         },
-        [GraphicParts.junctionTop]: {
-          offset: 0.28,
-          speed: 0.1,
+        [GraphicParts.junctionTop]:{
+          offset: 0.3,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]: {
-          offset: 0.83,
+          offset: 0.8,
           speed: 0.2
         },
         [GraphicParts.parchment]: {
-          offset: 0.85,
+          offset: 0.8,
           speed: 0.18
         }
       },
       [PageName.fire]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 1,
+          speed: 0.2
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.8,
+          speed: 0.1
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 1.88,
+          speed: 0.15
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
-        }
-      },
+          offset: 1.85,
+          speed: 0.18
+      }
+    },
       [PageName.cloudFalls]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.2,
+          speed: 0.1
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.9,
+          speed: 0.15
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.96,
+          speed: 0.12
         },
         [GraphicParts.parchment]:{
-          offset: 0,
-          speed: 0,
+          offset: 2.98,
+          speed: 0.2
         }
       },
       [PageName.flowerDust]:{
         [GraphicParts.picture]:{
-          offset: 0,
-          speed: 0,
+          offset: 3.017,
+          speed: 0.2,
         },
         [GraphicParts.junctionTop]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.junctionBottom]:{
-          offset: 0,
+          offset: 5,
           speed: 0,
         },
         [GraphicParts.parchment]:{
-          offset: 0,
+          offset: 3.81,
           speed: 0,
         }
       }
-    }
+    
   }
+}
+

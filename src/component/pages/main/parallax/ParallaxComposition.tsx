@@ -1,8 +1,8 @@
 
 import { PageCompositions, PageName, ParallaxConfig } from "./ParallaxConfig";
 
-import { Adaptive } from "./AdaptiveHook";
 import { ParallaxLayer } from "@react-spring/parallax";
+import { Adaptive } from "./AdaptiveHook";
 
 function ParallaxComposition({children}:{children:any}) {
     const width: Adaptive = children.width;
@@ -11,28 +11,28 @@ function ParallaxComposition({children}:{children:any}) {
     const pageConfig = ParallaxConfig[width][pageName];
     const composition = PageCompositions[pageName];
     
-
     return (
         <div>
-        <ParallaxLayer 
+        <ParallaxLayer id = "picture"
             offset= {pageConfig.picture.offset}
             speed={pageConfig.picture.speed}
             style={{ display:'flex',justifyContent:'center'}} >
                 <img src= {composition.imagesUris.pictureUri}/>
         </ParallaxLayer>
-        <ParallaxLayer 
+        <ParallaxLayer id="junctionTop"
             offset={pageConfig.junctionTop.offset}
             speed={pageConfig.junctionTop.speed}
             style={{ display:'flex',justifyContent:'center'}}>
                 <img src= {composition.imagesUris.junctionTopUri}/>
         </ParallaxLayer>
-        <ParallaxLayer 
+        <ParallaxLayer id = "junctionBottom"
             offset={pageConfig.junctionBottom.offset}
             speed={pageConfig.junctionBottom.speed}
             style={{ display:'flex',justifyContent:'center'}}>
                 <img src= {composition.imagesUris.junctionBottomUri}/>
         </ParallaxLayer>
-        <ParallaxLayer 
+        <ParallaxLayer id="parchment"
+            onClick={() => onclick()}
             offset={pageConfig.parchment.offset}
             speed={pageConfig.parchment.speed}
             style={{ display:'flex',justifyContent:'center'}}>
@@ -41,6 +41,10 @@ function ParallaxComposition({children}:{children:any}) {
         </div>
     )
 }
+
+function onclick(){
+    console.log('HELO');
+} 
 
 
 
