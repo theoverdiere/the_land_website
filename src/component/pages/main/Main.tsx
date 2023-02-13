@@ -1,9 +1,26 @@
+import { motion } from "framer-motion";
 import ParallaxComponent from "./parallax/ParallaxComponent";
 
-function Main(){
+function Main() {
+
+    const containerVariants = {
+        hidden: {
+            opacity: 0
+        },
+        visible: {
+            opacity: 1,
+            transition: { delay: 5.5, duration: 8 }
+        },
+        exit: {
+            opacity: 0,
+            transition: { delay: 0, duration: 1 }
+        }
+    }
     return (
-        <ParallaxComponent>
-        </ParallaxComponent>
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit">
+            <ParallaxComponent>
+            </ParallaxComponent>
+        </motion.div>
     )
 }
 

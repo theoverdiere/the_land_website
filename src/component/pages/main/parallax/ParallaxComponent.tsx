@@ -5,30 +5,30 @@ import { PageName, ParallaxConfig } from "./ParallaxConfig";
 
 import ParallaxComposition from "./ParallaxComposition";
 
-function ParallaxComponent({children} : {children: any}) {
-  const width: Adaptive = useAdaptiveTriggers({});
-  const parallax = useRef<IParallax>(null!);
-  
-   return (
-        <Parallax 
+function ParallaxComponent({ children }: { children: any }) {
+    const width: Adaptive = useAdaptiveTriggers({});
+    const parallax = useRef<IParallax>(null!);
+
+    return (
+        <Parallax
             pages={ParallaxConfig[width].pages}
             ref={parallax}
             key={width}
-            >
-                <ParallaxComposition >
-                    {defineProps(children, PageName.flowerDust ,parallax ,width)}
-                </ParallaxComposition>
-                <ParallaxComposition >
-                    {defineProps(children, PageName.cloudFalls ,parallax ,width)}
-                </ParallaxComposition>
-                <ParallaxComposition >
-                    {defineProps(children, PageName.fire, parallax, width)}
-                </ParallaxComposition>
-                <ParallaxComposition >
-                    {defineProps(children, PageName.neverCatch ,parallax ,width)}
-                </ParallaxComposition>
+        >
+            <ParallaxComposition >
+                {defineProps(children, PageName.flowerDust, parallax, width)}
+            </ParallaxComposition>
+            <ParallaxComposition >
+                {defineProps(children, PageName.cloudFalls, parallax, width)}
+            </ParallaxComposition>
+            <ParallaxComposition >
+                {defineProps(children, PageName.fire, parallax, width)}
+            </ParallaxComposition>
+            <ParallaxComposition >
+                {defineProps(children, PageName.neverCatch, parallax, width)}
+            </ParallaxComposition>
         </Parallax>
-   )
+    )
 }
 
 
@@ -40,14 +40,13 @@ function ParallaxComponent({children} : {children: any}) {
  * @param width 
  * @returns 
  */
-function defineProps(children: any, compositionName: PageName, parallax: React.MutableRefObject<IParallax>, width: Adaptive ): any {
+function defineProps(children: any, compositionName: PageName, parallax: React.MutableRefObject<IParallax>, width: Adaptive): any {
     return {
-        children: children, 
-        width: width, 
-        parallax:parallax,
+        children: children,
+        width: width,
+        parallax: parallax,
         pageName: compositionName
-        };
+    };
 }
 
- export default ParallaxComponent;
- 
+export default ParallaxComponent;
