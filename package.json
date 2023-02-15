@@ -2,7 +2,7 @@
   "name": "the_land_website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://theoverdiere.github.io/the_land_website",
+  "homepage": "https://theoverdiere.github.io/",
   "dependencies": {
     "@react-spring/parallax": "^9.6.1",
     "@react-spring/web": "^9.6.1",

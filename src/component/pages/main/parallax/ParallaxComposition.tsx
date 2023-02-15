@@ -12,16 +12,6 @@ function ParallaxComposition({ children }: { children: any }) {
     const pageConfig = ParallaxConfig[width][pageName];
     const composition = PageCompositions[pageName];
 
-    const containerVariants = {
-        // hidden: {
-        //     opacity: 0
-        // },
-        // visible: {
-        //     opacity: 1,
-        //     transition: { delay: 2, duration: 2 }
-        // }
-    }
-
     return (
         <motion.div initial="hidden" animate="visible">
             <ParallaxLayer id="picture"

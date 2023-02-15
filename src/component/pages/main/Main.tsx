@@ -9,7 +9,7 @@ function Main() {
         },
         visible: {
             opacity: 1,
-            transition: { delay: 5.5, duration: 8 }
+            transition: { delay: 5, duration: 4 }
         },
         exit: {
             opacity: 0,
