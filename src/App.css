@@ -1,0 +1,26 @@
+body {
+    height: 100%;
+    background-color: black;
+}
+
+#root {
+    height: 100%;
+}
+
+.App {
+    height: 100%;
+}
+
+.portalContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+
+.portalContent {
+    width: 30%;
+}
