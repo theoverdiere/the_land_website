@@ -84,16 +84,11 @@ function Portal() {
                         >
                             <defs>
                                 <style>
-                                    {".cls-1,.cls-3{fill:#000}.cls-1{stroke:#000}.cls-1,.cls-3,.cls-4{stroke-miterlimit:10;stroke-width:5px}.cls-2{fill:#fff}.cls-3,.cls-4{stroke:#fff}.cls-4{fill:#000}"}
+                                    {".cls-1,.cls-3{fill:#000}.cls-1{stroke:#000}.cls-3,.cls-4{stroke-miterlimit:10;stroke-width:5px}.cls-2{fill:#fff}.cls-3,.cls-4{stroke:#fff;fill:#000}.cls-5{stroke:#fff;stroke-width:5px;fill-opacity:0}.cls-6{stroke:#fff;stroke-width:5px;fill:#fff}"}
                                 </style>
                             </defs>
                             <path id="FOND" className="cls-1" d="M2.5 2.5H1172.5V2028.5H2.5z" />
-                            <path
-                                id="Background_white"
-                                data-name="Background white"
-                                className="cls-2"
-                                d="M559.09 360.72L523.37 369.17 497.31 379.43 478.6 389.17 455.26 404.69 437.83 420.83 418.63 439.86 402.17 462.54 394.33 482.07 388 505.17 381.8 545.85 379.39 598.5 379.39 630.5 379.39 665.67 379.7 708 387.64 1361.17 398.65 1366.5 400.72 1397.11 778.61 1399.37 779.2 1372.81 789.94 1360.72 798.72 692.5 790.06 684.83 790.59 647.94 787.45 646.61 791.42 632.22 801.88 632.22 799.73 557.52 796.94 533.83 790.5 500.5 782.06 469.08 745.28 422.18 700.45 388.43 665.24 372 628.67 362.67 617.67 360.27 615.5 378.08 564.25 378.42 559.09 360.72z"
-                            />
+                            <polygon id="Background_white" className="cls-6" data-name="Background white" points="559.09 360.72 523.37 369.17 497.31 379.43 478.6 389.17 455.26 404.69 437.83 420.83 418.63 439.86 402.17 462.54 394.33 482.07 388 505.17 381.8 545.85 380.67 601.08 381.17 629 387.64 628.92 394.58 648.03 390.11 648.11 390.02 684.48 381.89 692.5 389.83 1356.75 399.62 1365.83 400.72 1397.11 778.61 1399.37 779.2 1372.81 789.94 1360.72 798.72 692.5 790.06 684.83 790.59 647.94 787.45 646.61 791.42 632.22 801.88 632.22 799.73 557.52 796.94 533.83 790.5 500.5 782.06 469.08 745.28 422.18 700.45 388.43 665.24 372 628.67 362.67 617.67 360.27 615.5 378.08 564.25 378.42 559.09 360.72" />
                             <g id="DOOR">
                                 <motion.path id="RIGHT_DOOR"
                                     variants={doorVariants}
@@ -106,7 +101,7 @@ function Portal() {
                                     initial="initial"
                                     animate="visible"
                                     exit="exitLeftDoor"
-                                    className="cls-1" d="M0 300 H587 V1462 H0" />
+                                    className="cls-1" d="M0 300 H590 V1462 H0" />
                                 <motion.path variants={linePortalVariants} initial="hidden" exit="exit"
                                     id="LINE_FRONT"
                                     className="cls-3"
@@ -114,7 +109,7 @@ function Portal() {
                                 />
                             </g>
                             <g id="PORTAL">
-                                <g id="portal_floor">
+                                <g id="FLOOR">
                                     <path
                                         className="cls-3"
                                         d="M194.52 1433.83H981.1899999999999V1474.83H194.52z"
@@ -143,64 +138,66 @@ function Portal() {
                                     />
                                     <path className="cls-3" d="M120 1608.55H1057.72V1743.17H120z" />
                                 </g>
-                                <g id="portal_portal">
+                                <g id="GATE">
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
+                                        d="M798.18 1435.97L778.61 1397.11 779.28 1369.55 790.78 1358.99"
+                                    />
+                                    <path
+                                        className="cls-5"
                                         d="M553.58 246.28L623 246.28 615.33 376.75 563.33 376.75 553.58 246.28z"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M551.08 251.67S340 289.13 284.44 441c0 0-14.82 71.25-9.09 194M620.5 252.33S829.39 289.67 884.39 441c0 0 14.67 71 9 193.33"
                                         transform="translate(2.5 2.5)"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M558.51 328.43S433.55 358.14 387.3 431c-21.23 33.44-26.11 140.44-24.46 199.72M617 328.43s125.13 29.91 171.45 103.27c21.25 33.66 26.14 141.39 24.49 201.07"
-                                        transform="translate(2.5 2.5)"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M560.52 357.77S452 366.14 393 471.17c0 0-18 38.13-16.67 159.55M615.17 357.77S723.68 366.2 782.68 472c0 0 18 38.42 16.67 160.75"
-                                        transform="translate(2.5 2.5)"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M270.83 632.77l2.62-.09 107.32-3.87 4-.14c2.26 7.66 4.34 14.5 4.34 14.5L272.22 647z"
                                         transform="translate(2.5 2.5)"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M277.83 649.39L276.53 690.72 378.77 690.72 378.77 645.94"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M387.64 648.03L387.57 683.49 379.5 691.44 381.65 871.5 387.52 1363.84 387.64 1373.83 379.39 1396.06"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M903.22 633.83l-2.62-.1-107.31-3.87-4-.14c-2.26 7.67-4.34 14.5-4.34 14.5l116.88 3.83z"
                                         transform="translate(2.5 2.5)"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M901.22 650.45L902.52 691.77 800.28 691.77 800.28 647"
                                     />
-                                    <path className="cls-4" d="M791.42 649.09L791.49 684.54 799.56 692.5" />
+                                    <path className="cls-5" d="M791.42 649.09L791.49 684.54 799.56 692.5" />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M281.5 690.72L281.5 1396.06 372.5 1396.06 367.91 690.72 281.5 690.72z"
                                     />
                                     <path className="cls-3" d="M270.5 1396.06H379.39V1433.84H270.5z" />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M380.04 1434.92L399.61 1396.06 398.94 1368.5 387.45 1357.94"
                                     />
-                                    <path
-                                        className="cls-4"
+                                    <path id="BORD DROIT PB"
+                                        className="cls-5"
                                         d="M790.59 649.09L790.66 684.54 798.72 692.5 790.71 1364.89 790.59 1374.89 798.83 1397.11"
                                     />
                                     <path
-                                        className="cls-4"
+                                        className="cls-5"
                                         d="M896.72 691.77L896.72 1397.11 805.72 1397.11 810.31 691.77 896.72 691.77z"
                                     />
                                     <path
@@ -208,18 +205,14 @@ function Portal() {
                                         transform="rotate(-180 852.03 1414.745)"
                                         d="M796.33 1394.61H905.22V1432.3899999999999H796.33z"
                                     />
-                                    <path
-                                        className="cls-4"
-                                        d="M798.18 1435.97L778.61 1397.11 779.28 1369.55 790.78 1358.99"
-                                    />
-                                    <path className="cls-4" d="M908.02 1395.84L896.52 1376.13" />
-                                    <path className="cls-4" d="M398.65 1398.97L778.61 1399.37" />
-                                    <path className="cls-4" d="M379.39 1433.83L798.83 1434.89" />
-                                    <path className="cls-4" d="M270.18 1394.81L281.5 1375.5" />
+
+                                    <path className="cls-5" d="M908.02 1395.84L896.52 1376.13" />
+                                    <path className="cls-5" d="M398.65 1398.97L778.61 1399.37" />
+                                    <path className="cls-5" d="M379.39 1433.83L798.83 1434.89" />
+                                    <path className="cls-5" d="M270.18 1394.81L281.5 1375.5" />
                                 </g>
-
-
                             </g>
+
                             <motion.g id="TITLE" variants={titleVariants} animate="visible" exit="exit">
                                 <path
                                     className="cls-2"
@@ -227,9 +220,11 @@ function Portal() {
                                     transform="translate(2.5 2.5)"
                                 />
                             </motion.g>
+
                         </motion.svg>
                     </NavLink>
                 </motion.div>
+
             </div>
         </div>
 
