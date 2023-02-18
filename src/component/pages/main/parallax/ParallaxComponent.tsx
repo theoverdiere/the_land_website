@@ -15,15 +15,24 @@ function ParallaxComponent({ children }: { children: any }) {
             ref={parallax}
             key={width}
         >
+            {/* Inverted Sens */}
+
+            {/* Flowerdustr */}
             <ParallaxComposition >
                 {defineProps(children, PageName.flowerDust, parallax, width)}
             </ParallaxComposition>
+
+            {/* CloudFalls */}
             <ParallaxComposition >
                 {defineProps(children, PageName.cloudFalls, parallax, width)}
             </ParallaxComposition>
+
+            {/* Fire */}
             <ParallaxComposition >
                 {defineProps(children, PageName.fire, parallax, width)}
             </ParallaxComposition>
+
+            {/* NeverCatch */}
             <ParallaxComposition >
                 {defineProps(children, PageName.neverCatch, parallax, width)}
             </ParallaxComposition>

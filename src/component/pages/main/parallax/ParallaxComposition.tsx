@@ -14,6 +14,9 @@ function ParallaxComposition({ children }: { children: any }) {
 
     return (
         <motion.div initial="hidden" animate="visible">
+
+
+
             <ParallaxLayer id="picture"
                 offset={pageConfig.picture.offset}
                 speed={pageConfig.picture.speed}
