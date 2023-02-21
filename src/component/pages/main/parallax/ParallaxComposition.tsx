@@ -1,9 +1,7 @@
 
 import { PageCompositions, PageName, ParallaxConfig } from "./ParallaxConfig";
-
 import { ParallaxLayer } from "@react-spring/parallax";
 import { Adaptive } from "./AdaptiveHook";
-import { motion } from "framer-motion";
 
 function ParallaxComposition({ children }: { children: any }) {
     const width: Adaptive = children.width;
@@ -13,36 +11,44 @@ function ParallaxComposition({ children }: { children: any }) {
     const composition = PageCompositions[pageName];
 
     return (
-        <motion.div initial="hidden" animate="visible">
-
-
-
+        <div>
             <ParallaxLayer id="picture"
                 offset={pageConfig.picture.offset}
                 speed={pageConfig.picture.speed}
-                style={{ display: 'flex', justifyContent: 'center' }} >
-                <img src={composition.imagesUris.pictureUri} />
+            >
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                    <img src={composition.imagesUris.pictureUri} />
+                </div>
             </ParallaxLayer>
             <ParallaxLayer id="junctionTop"
                 offset={pageConfig.junctionTop.offset}
                 speed={pageConfig.junctionTop.speed}
-                style={{ display: 'flex', justifyContent: 'center' }}>
-                <img src={composition.imagesUris.junctionTopUri} />
+            >
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                    <img src={composition.imagesUris.junctionTopUri} />
+                </div>
             </ParallaxLayer>
             <ParallaxLayer id="junctionBottom"
                 offset={pageConfig.junctionBottom.offset}
                 speed={pageConfig.junctionBottom.speed}
-                style={{ display: 'flex', justifyContent: 'center' }}>
-                <img src={composition.imagesUris.junctionBottomUri} />
+            >
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                    <img src={composition.imagesUris.junctionBottomUri} />
+                </div>
+
             </ParallaxLayer>
             <ParallaxLayer id="parchment"
                 onClick={() => onclick()}
                 offset={pageConfig.parchment.offset}
                 speed={pageConfig.parchment.speed}
-                style={{ display: 'flex', justifyContent: 'center' }}>
-                <img src={composition.imagesUris.parchmentUri} />
+            >
+
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                    <img src={composition.imagesUris.parchmentUri} />
+                </div>
+
             </ParallaxLayer>
-        </motion.div>
+        </div>
     )
 }
 

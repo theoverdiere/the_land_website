@@ -1,4 +1,4 @@
-import { IParallax, Parallax } from "@react-spring/parallax";
+import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useRef } from "react";
 import { Adaptive, useAdaptiveTriggers } from "./AdaptiveHook";
 import { PageName, ParallaxConfig } from "./ParallaxConfig";
@@ -10,12 +10,21 @@ function ParallaxComponent({ children }: { children: any }) {
     const parallax = useRef<IParallax>(null!);
 
     return (
+
         <Parallax
             pages={ParallaxConfig[width].pages}
             ref={parallax}
             key={width}
+            className="testZBelow"
         >
             {/* Inverted Sens */}
+
+            <ParallaxLayer className="grainLayer" sticky={{
+                start: 0,
+                end: 4
+            }}>
+
+            </ParallaxLayer>
 
             {/* Flowerdustr */}
             <ParallaxComposition >
@@ -36,7 +45,9 @@ function ParallaxComponent({ children }: { children: any }) {
             <ParallaxComposition >
                 {defineProps(children, PageName.neverCatch, parallax, width)}
             </ParallaxComposition>
+
         </Parallax>
+
     )
 }
 

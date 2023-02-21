@@ -1,6 +1,4 @@
 body {
-    /* height: 100vh; */
-
     overflow: hidden;
 }
 
@@ -11,6 +9,7 @@ body {
 .App {
     height: 100vh;
 }
+
 
 
 /* Portail */
@@ -32,4 +31,16 @@ body {
     width: 100vw;
     height: auto;
     display: block;
+}
+
+/* Main */
+
+/* Couche superieure */
+.grainLayer {
+    z-index: 2;
+    position: relative;
+    height: 100vh;
+    background-color: red;
+    background-attachment: fixed;
+    opacity: 0.5;
 }
