@@ -1,7 +1,19 @@
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 
-const containerVariants = {
+// Animation Config for the global container page of the portal
+const portalContainerVariants = {
+    initial: {
+        opacity: 1
+    },
+    exit: {
+        opacity: 0,
+        transition: { delay: 2.3, duration: 1.5 }
+    }
+}
+
+// Animation Config for the portal
+const portalVariants = {
     initial: {
         opacity: 0,
         scale: 1
@@ -12,15 +24,16 @@ const containerVariants = {
         transition: { delay: 0, duration: 1.6 }
     },
     exit: {
-        opacity: 0,
+        scale: 2,
         transition: {
-            delay: 5,
-            duration: 4,
+            delay: 2.2,
+            duration: 1.5,
             ease: 'easeIn'
         }
     }
 }
 
+// Animation Config for title of the portal
 const titleVariants = {
     visible: {
         opacity: 1,
@@ -32,6 +45,7 @@ const titleVariants = {
     }
 }
 
+// Animation Config for central line of the portal
 const linePortalVariants = {
     hidden: {
         opacity: 0,
@@ -41,8 +55,8 @@ const linePortalVariants = {
         pathLength: 1,
         opacity: 1,
         transition: {
-            delay: 0.5,
-            duration: 2,
+            delay: 0.4,
+            duration: 1.3,
             // Custom duration for Opacity
             opacity: {
                 duration: 0
@@ -51,6 +65,7 @@ const linePortalVariants = {
     }
 }
 
+// Animation Config for doors of the portal
 const doorVariants = {
     initial: {
         opacity: 0,
@@ -62,23 +77,22 @@ const doorVariants = {
     },
     exitLeftDoor: {
         x: -300,
-        transition: { delay: 2.45, duration: 2 }
+        transition: { delay: 1.5, duration: 1.3 }
     },
     exitDoorRight: {
         x: 300,
-        transition: { delay: 2.5, duration: 2, }
+        transition: { delay: 1.5, duration: 1.3 }
     }
 }
 
-
 function Portal() {
     return (
-        <div className='portalContainer'>
+        <motion.div variants={portalContainerVariants} initial="initial" exit="exit" className='portalContainer' >
 
             <motion.svg
                 id="CONTAINER"
                 className='portalContent'
-                variants={containerVariants} initial="initial" animate="visible" exit="exit"
+                variants={portalVariants} initial="initial" animate="visible" exit="exit"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1175 2031"
             >
@@ -229,7 +243,7 @@ function Portal() {
 
 
 
-        </div>
+        </motion.div>
     )
 }
 

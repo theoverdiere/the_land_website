@@ -19,12 +19,11 @@ function ParallaxComponent({ children }: { children: any }) {
         >
             {/* Inverted Sens */}
 
-            <ParallaxLayer className="grainLayer" sticky={{
+            {/* <ParallaxLayer className="grainLayer" sticky={{
                 start: 0,
                 end: 4
             }}>
-
-            </ParallaxLayer>
+            </ParallaxLayer> */}
 
             {/* Flowerdustr */}
             <ParallaxComposition >
