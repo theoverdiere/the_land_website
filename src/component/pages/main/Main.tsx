@@ -9,11 +9,11 @@ function Main() {
         },
         visible: {
             opacity: 1,
-            transition: { delay: 4, duration: 2.5 }
+            // transition: { delay: 4, duration: 2.5 }
         },
         exit: {
             opacity: 0,
-            transition: { delay: 0, duration: 0.5 }
+            // transition: { delay: 0, duration: 0.5 }
         }
     }
     return (

@@ -6,7 +6,7 @@ import neverCatch from './imgs/neverCatch/never_catch_color.svg';
 import junctionNeverCatchTop from './imgs/neverCatch/junction_top_nevercatch.svg';
 import junctionNeverCatchBottom from './imgs/neverCatch/junction_bottom_nevercatch.svg';
 
-import fire from './imgs/fire/fire.svg';
+import fire from './imgs/fire/fire_color.svg';
 import junctionFireTop from './imgs/fire/jonction_middle_two.svg';
 import junctionFireMiddle from './imgs/fire/jonction_edge_two.svg';
 
@@ -97,33 +97,33 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0
       },
       [GraphicParts.junctionTop]: {
-        offset: 0.7,
+        offset: 0.38,
         speed: 0.1
       },
       [GraphicParts.junctionBottom]: {
-        offset: 0.8,
+        offset: 0.85,
         speed: 0.2
       },
       [GraphicParts.parchment]: {
-        offset: 0.9,
+        offset: 0.87,
         speed: 0.18
       }
     },
     [PageName.fire]: {
       [GraphicParts.picture]: {
-        offset: 1,
+        offset: 0.9,
         speed: 0.2
       },
       [GraphicParts.junctionTop]: {
-        offset: 1.8,
+        offset: 1.6,
         speed: 0.1
       },
       [GraphicParts.junctionBottom]: {
-        offset: 1.88,
+        offset: 1.75,
         speed: 0.15
       },
       [GraphicParts.parchment]: {
-        offset: 1.85,
+        offset: 1.65,
         speed: 0.18
       }
     },
