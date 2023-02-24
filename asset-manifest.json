@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/the_land_website/static/css/main.324dff9a.css",
-    "main.js": "/the_land_website/static/js/main.ff8ca10e.js",
+    "main.js": "/the_land_website/static/js/main.c645eca4.js",
     "static/js/787.c08a3c3c.chunk.js": "/the_land_website/static/js/787.c08a3c3c.chunk.js",
     "static/media/never_catch_color.svg": "/the_land_website/static/media/never_catch_color.47c563b27b36bc652720c13f16c265da.svg",
     "static/media/fire_color.svg": "/the_land_website/static/media/fire_color.c827ae5bce2880ee65f4a1bdd7db6088.svg",
@@ -16,11 +16,11 @@
     "static/media/parchemin.svg": "/the_land_website/static/media/parchemin.405259f8c8eb14802b54690c1302e15d.svg",
     "index.html": "/the_land_website/index.html",
     "main.324dff9a.css.map": "/the_land_website/static/css/main.324dff9a.css.map",
-    "main.ff8ca10e.js.map": "/the_land_website/static/js/main.ff8ca10e.js.map",
+    "main.c645eca4.js.map": "/the_land_website/static/js/main.c645eca4.js.map",
     "787.c08a3c3c.chunk.js.map": "/the_land_website/static/js/787.c08a3c3c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.324dff9a.css",
-    "static/js/main.ff8ca10e.js"
+    "static/js/main.c645eca4.js"
   ]
 }
