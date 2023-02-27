@@ -18,6 +18,7 @@ import flowerdust from './imgs/flowerdust/flowerdust.svg';
 
 
 export enum PageName {
+  none = 'none',
   neverCatch = 'neverCatch',
   fire = 'fire',
   cloudFalls = 'cloudFalls',
@@ -34,6 +35,14 @@ export interface PageComposition {
 }
 
 export const PageCompositions: Record<PageName, PageComposition> = {
+  [PageName.none]: {
+    imagesUris: {
+      pictureUri: 'undefined',
+      junctionTopUri: 'undefined',
+      junctionBottomUri: 'undefined',
+      parchmentUri: 'undefined'
+    }
+  },
   [PageName.neverCatch]: {
     imagesUris: {
       pictureUri: neverCatch,
@@ -91,6 +100,24 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
   [Adaptive.mobile320]: {
     pages: 4,
     largeur: '100%',
+    [PageName.none]: {
+      [GraphicParts.picture]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionTop]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionBottom]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.parchment]: {
+        offset: 0,
+        speed: 0
+      }
+    },
     [PageName.neverCatch]: {
       [GraphicParts.picture]: {
         offset: 0,
@@ -159,7 +186,7 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0,
       },
       [GraphicParts.parchment]: {
-        offset: 3.81,
+        offset: 4,
         speed: 0,
       }
     }
@@ -168,6 +195,24 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
   [Adaptive.mobile375]: {
     pages: 4,
     largeur: '100%',
+    [PageName.none]: {
+      [GraphicParts.picture]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionTop]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionBottom]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.parchment]: {
+        offset: 0,
+        speed: 0
+      }
+    },
     // OK
     [PageName.neverCatch]: {
       [GraphicParts.picture]: {
@@ -246,6 +291,24 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
     pages: 4,
     largeur: '100%',
     // OK
+    [PageName.none]: {
+      [GraphicParts.picture]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionTop]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionBottom]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.parchment]: {
+        offset: 0,
+        speed: 0
+      }
+    },
     [PageName.neverCatch]: {
       [GraphicParts.picture]: {
         offset: 0,
@@ -322,6 +385,24 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
   [Adaptive.mobileL]: {
     pages: 4,
     largeur: '100%',
+    [PageName.none]: {
+      [GraphicParts.picture]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionTop]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionBottom]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.parchment]: {
+        offset: 0,
+        speed: 0
+      }
+    },
     [PageName.neverCatch]: {
       [GraphicParts.picture]: {
         offset: 0,
@@ -398,6 +479,24 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
   [Adaptive.tablette]: {
     pages: 4,
     largeur: '100%',
+    [PageName.none]: {
+      [GraphicParts.picture]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionTop]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionBottom]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.parchment]: {
+        offset: 0,
+        speed: 0
+      }
+    },
     [PageName.neverCatch]: {
       [GraphicParts.picture]: {
         offset: 0,
@@ -474,6 +573,24 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
   [Adaptive.laptop]: {
     pages: 4,
     largeur: '100%',
+    [PageName.none]: {
+      [GraphicParts.picture]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionTop]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionBottom]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.parchment]: {
+        offset: 0,
+        speed: 0
+      }
+    },
     [PageName.neverCatch]: {
       [GraphicParts.picture]: {
         offset: 0,
@@ -550,6 +667,24 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
   [Adaptive.laptopL]: {
     pages: 4,
     largeur: '100%',
+    [PageName.none]: {
+      [GraphicParts.picture]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionTop]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.junctionBottom]: {
+        offset: 0,
+        speed: 0
+      },
+      [GraphicParts.parchment]: {
+        offset: 0,
+        speed: 0
+      }
+    },
     [PageName.neverCatch]: {
       [GraphicParts.picture]: {
         offset: 0,

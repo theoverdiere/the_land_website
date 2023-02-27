@@ -17,7 +17,7 @@ function Main() {
         }
     }
     return (
-        <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit">
+        <motion.div id="Main" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
             <ParallaxComponent>
             </ParallaxComponent>
         </motion.div>

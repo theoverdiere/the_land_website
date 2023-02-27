@@ -4,6 +4,7 @@ import { Adaptive, useAdaptiveTriggers } from "./AdaptiveHook";
 import { PageName, ParallaxConfig } from "./ParallaxConfig";
 
 import ParallaxComposition from "./ParallaxComposition";
+import ParchmentPlayer from "./player/ParchmentPlayer";
 
 function ParallaxComponent({ children }: { children: any }) {
     const width: Adaptive = useAdaptiveTriggers({});
@@ -15,15 +16,22 @@ function ParallaxComponent({ children }: { children: any }) {
             pages={ParallaxConfig[width].pages}
             ref={parallax}
             key={width}
-            className="testZBelow"
         >
             {/* Inverted Sens */}
 
-            {/* <ParallaxLayer className="grainLayer" sticky={{
-                start: 0,
-                end: 4
-            }}>
-            </ParallaxLayer> */}
+            <ParallaxLayer
+                sticky={{
+                    start: 0,
+                    end: 4
+                }}
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'flex-end' }}
+
+            >
+                <div>
+                    <ParchmentPlayer refScroll={parallax}></ParchmentPlayer>
+                </div>
+            </ParallaxLayer>
+
 
             {/* Flowerdustr */}
             <ParallaxComposition >
@@ -45,11 +53,20 @@ function ParallaxComponent({ children }: { children: any }) {
                 {defineProps(children, PageName.neverCatch, parallax, width)}
             </ParallaxComposition>
 
-        </Parallax>
+
+            {/* <ParallaxLayer
+                //  className="grainLayer" 
+                sticky={{
+                    start: 0.9,
+                    end: 4
+                }}>
+                <img src={parchment}></img>
+            </ParallaxLayer> */}
+
+        </Parallax >
 
     )
 }
-
 
 /**
  * Define props for the Parallax Composition
