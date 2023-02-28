@@ -27,7 +27,7 @@ function ParallaxComponent({ children }: { children: any }) {
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'flex-end' }}
 
             >
-                <div>
+                <div >
                     <ParchmentPlayer refScroll={parallax}></ParchmentPlayer>
                 </div>
             </ParallaxLayer>

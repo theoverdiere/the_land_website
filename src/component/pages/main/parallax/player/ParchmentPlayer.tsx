@@ -1,11 +1,29 @@
 import { IParallax } from "@react-spring/parallax";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { PageName } from "../ParallaxConfig";
+
+const audioUrlArray: AudioArray = {
+    none: "http://jPlayer.org/audio/mp3/Miaow-07-Bubble.mp3",
+    neverCatch: "http://jPlayer.org/audio/mp3/Miaow-07-Bubble.mp3",
+    fire: "http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3",
+    cloudFalls: 'noUrl',
+    flowerDust: 'noUrl'
+}
+
+
+const neverCatchAudio = new Audio("http://jPlayer.org/audio/mp3/Miaow-07-Bubble.mp3");
+const fireAudio = new Audio("http://codeskulptor-demos.commondatastorage.googleapis.com/GalaxyInvaders/theme_01.mp3");
+
+type AudioArray = {
+    [id in PageName]: string;
+};
+
+
+
 
 function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }) {
     const [isCurrentPlayingTrack, setCurrentPlayingTrack] = useState(PageName.none);
-
-
+    const [isPlaying, setIsPlaying] = useState(true);
 
     return (
         <svg id="CONTENT" style={{ height: '18vh', width: '90%', marginLeft: '10px' }}
@@ -73,6 +91,15 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
                         <path d="M437.66,360.87l-.25,25.38q0,7.88.13,8.87a2.3,2.3,0,0,0,2.5,2.13,29.4,29.4,0,0,0,3.25-.38q8.11-1.12,10.5-2.12,3.12-1.38,8.5-6.88-.75,5.76-2.63,16.75H428.91q-7.25-.12-12,0a31.77,31.77,0,0,0,1.25-3.5,17.87,17.87,0,0,0,.75-4.87q.38-6.75.38-25.5V348.5q0-9.37-.13-18.5a65.93,65.93,0,0,0-.75-8.75,21.06,21.06,0,0,0-1.75-4.5q2.25-.12,7.13,0h35.87a57.6,57.6,0,0,1-.62,6.37l-.88,6.75a8.18,8.18,0,0,0-2.62-2.93,17.56,17.56,0,0,0-4.63-.69q-5.88-.37-13.37-.13v24.25h6a60.07,60.07,0,0,0,7.25-.25,10.88,10.88,0,0,0,4.62-1.62v14.37q-2.51-2-9.25-2Z" transform="translate(-213.97 -88)" />
                     </g>
 
+                    <g id="FIRE_ICONE" onClick={() => launchOrStopTrack(PageName.fire)}>
+                        {/* {isCurrentPlayingTrack === PageName.neverCatch ? */}
+                        {/* <g id="PAUSE_FIRE" >
+                            <rect x="709.03" y="210" width="28" height="94" />
+                            <rect x="753.03" y="220" width="28" height="94" />
+                        </g>  */}
+                        <polyline id="PLAY_FIRE" points="709 210 709 330 780 270" />
+                    </g>
+
                     {/* Nevercatch */}
                     <g id="NEVER_CATCH" onClick={() => scrollToPicture(PageName.neverCatch)}>
                         <path d="M288.27,219.85,288,237.73q-.12,12.75,0,21.12.14,7.88,1.63,11.5H273.27q-4.62-14.87-5.62-18-2.25-6.61-6.63-18.12l-6.62-17.75-.25,17.87q-.12,12.89.37,25.25.25,7.26,1.5,10.75H241.65a4.88,4.88,0,0,0,1.5-3.75c.08-3.16.17-6.33.25-9.5q.12-3.12.37-27.25l.13-11q.12-14.11-.25-22.37-.37-9-2.25-14.13h19.5q.87,3.26,4.37,13.5l12.63,37L278,221.6q.14-13.12-.5-27.5-.24-8-2-11.75a42.86,42.86,0,0,1,4.63,0H290.9a35.81,35.81,0,0,0-1.38,4.75Q288.53,195,288.27,219.85Z" transform="translate(-213.97 -88)" />
@@ -99,6 +126,8 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
         </svg>
     )
 
+
+
     function scrollToPicture(pageName: PageName) {
         switch (pageName) {
             case PageName.neverCatch:
@@ -114,19 +143,44 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
                 props.refScroll.current.scrollTo(3);
                 break;
         }
-
     }
+
+
+
 
     function launchOrStopTrack(pageName: PageName) {
-        if (pageName === isCurrentPlayingTrack) {
+
+        setIsPlaying(!isPlaying);
+        setCurrentPlayingTrack(pageName);
+
+
+        console.log('PAGE NAME', pageName);
+        if (!neverCatchAudio || !fireAudio)
+            return;
+
+        switch (pageName) {
+            case PageName.neverCatch:
+                fireAudio.pause();
+                neverCatchAudio.play();
+                break;
+            case PageName.fire:
+                neverCatchAudio.pause();
+                fireAudio.play();
+                break;
+        }
+
+        console.log('hello');
+
+        if (!isPlaying) {
             setCurrentPlayingTrack(PageName.none);
-            // TODO: stop playing
-        } else {
-            setCurrentPlayingTrack(pageName);
-            // TODO: start playing
+            neverCatchAudio.pause();
+            fireAudio.pause();
+            return;
         }
     }
+
 }
+
 
 
 
