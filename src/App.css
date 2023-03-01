@@ -32,6 +32,10 @@ body {
     display: block;
 }
 
+.buttonOpacity {
+    opacity: 0;
+}
+
 /* Main */
 
 /* Couche superieure */
