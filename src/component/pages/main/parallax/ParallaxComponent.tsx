@@ -4,7 +4,9 @@ import { Adaptive, useAdaptiveTriggers } from "./AdaptiveHook";
 import { PageName, ParallaxConfig } from "./ParallaxConfig";
 
 import ParallaxComposition from "./ParallaxComposition";
-import ParchmentPlayer from "./player/ParchmentPlayer";
+import ParchmentPlayer from "../ParchmentPlayer";
+import LinkPage from "./LinkPage";
+import linkPageSvg from "./link_page.svg";
 
 function ParallaxComponent({ children }: { children: any }) {
     const width: Adaptive = useAdaptiveTriggers({});
@@ -16,6 +18,7 @@ function ParallaxComponent({ children }: { children: any }) {
             pages={ParallaxConfig[width].pages}
             ref={parallax}
             key={width}
+            className="parallaxContainer"
         >
             {/* Inverted Sens */}
 
@@ -25,34 +28,50 @@ function ParallaxComponent({ children }: { children: any }) {
                     end: 4
                 }}
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'flex-end' }}
-
             >
                 <div >
                     <ParchmentPlayer refScroll={parallax}></ParchmentPlayer>
                 </div>
             </ParallaxLayer>
 
+            <div id="linkPage">
+                <ParallaxLayer offset={4}>
+                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                        <img src={linkPageSvg} />
+                        {/* <LinkPage>
+                        </LinkPage> */}
+                    </div>
+                </ParallaxLayer>
+            </div>
 
             {/* Flowerdustr */}
-            <ParallaxComposition >
-                {defineProps(children, PageName.flowerDust, parallax, width)}
-            </ParallaxComposition>
+            <div id="flowerDust">
+                <ParallaxComposition  >
+                    {defineProps(children, PageName.flowerDust, parallax, width)}
+                </ParallaxComposition>
+            </div>
+
 
             {/* CloudFalls */}
-            <ParallaxComposition >
-                {defineProps(children, PageName.cloudFalls, parallax, width)}
-            </ParallaxComposition>
+            <div id="cloudFalls">
+                <ParallaxComposition >
+                    {defineProps(children, PageName.cloudFalls, parallax, width)}
+                </ParallaxComposition>
+            </div>
 
             {/* Fire */}
-            <ParallaxComposition >
-                {defineProps(children, PageName.fire, parallax, width)}
-            </ParallaxComposition>
+            <div id="fire">
+                <ParallaxComposition >
+                    {defineProps(children, PageName.fire, parallax, width)}
+                </ParallaxComposition>
+            </div>
 
             {/* NeverCatch */}
-            <ParallaxComposition >
-                {defineProps(children, PageName.neverCatch, parallax, width)}
-            </ParallaxComposition>
-
+            <div id="neverCatch">
+                <ParallaxComposition >
+                    {defineProps(children, PageName.neverCatch, parallax, width)}
+                </ParallaxComposition>
+            </div>
 
             {/* <ParallaxLayer
                 //  className="grainLayer" 

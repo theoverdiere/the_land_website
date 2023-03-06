@@ -11,6 +11,7 @@ body {
 }
 
 
+
 /* Portail */
 
 /* Conteneur global */
@@ -37,6 +38,10 @@ body {
 }
 
 /* Main */
+
+.parallaxContainer {
+    background-color: blue;
+}
 
 /* Couche superieure */
 .grainLayer {

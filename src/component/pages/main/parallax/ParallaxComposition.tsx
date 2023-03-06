@@ -2,8 +2,6 @@
 import { PageCompositions, PageName, ParallaxConfig } from "./ParallaxConfig";
 import { ParallaxLayer } from "@react-spring/parallax";
 import { Adaptive } from "./AdaptiveHook";
-import soundOnSvg from "./imgs/sounds/sound_on.svg";
-
 
 function ParallaxComposition({ children }: { children: any }) {
     const width: Adaptive = children.width;
@@ -14,9 +12,6 @@ function ParallaxComposition({ children }: { children: any }) {
 
     return (
         <div>
-
-
-
             <ParallaxLayer id="picture"
                 offset={pageConfig.picture.offset}
                 speed={pageConfig.picture.speed}
@@ -40,33 +35,9 @@ function ParallaxComposition({ children }: { children: any }) {
                 <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                     <img src={composition.imagesUris.junctionBottomUri} />
                 </div>
-
             </ParallaxLayer>
-
-
-            {/* <ParallaxLayer id="parchment"
-                onClick={() => onclick()}
-
-                offset={pageConfig.parchment.offset}
-                speed={pageConfig.parchment.speed}
-            >
-                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                    <img src={composition.imagesUris.parchmentUri} />
-                </div>
-
-            </ParallaxLayer> */}
-
-
         </div>
     )
 }
-
-function onclick() {
-    console.log('PARCHMLENT');
-}
-
-
-
-
 
 export default ParallaxComposition;

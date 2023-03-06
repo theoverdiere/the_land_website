@@ -1,12 +1,10 @@
 import { Adaptive } from "./AdaptiveHook"
 
-import parchment from './imgs/parchemin.svg';
-
-import neverCatch from './imgs/neverCatch/never_catch_color.svg';
+import neverCatch from './imgs/neverCatch/nevercatch.svg';
 import junctionNeverCatchTop from './imgs/neverCatch/junction_top_nevercatch.svg';
 import junctionNeverCatchBottom from './imgs/neverCatch/junction_bottom_nevercatch.svg';
 
-import fire from './imgs/fire/fire_color.svg';
+import fire from './imgs/fire/fire.svg';
 import junctionFireTop from './imgs/fire/jonction_middle_two.svg';
 import junctionFireMiddle from './imgs/fire/jonction_edge_two.svg';
 
@@ -29,8 +27,7 @@ export interface PageComposition {
   imagesUris: {
     pictureUri: string,
     junctionTopUri: string,
-    junctionBottomUri: string,
-    parchmentUri: string
+    junctionBottomUri: string
   }
 }
 
@@ -39,40 +36,35 @@ export const PageCompositions: Record<PageName, PageComposition> = {
     imagesUris: {
       pictureUri: 'undefined',
       junctionTopUri: 'undefined',
-      junctionBottomUri: 'undefined',
-      parchmentUri: 'undefined'
+      junctionBottomUri: 'undefined'
     }
   },
   [PageName.neverCatch]: {
     imagesUris: {
       pictureUri: neverCatch,
       junctionTopUri: junctionNeverCatchTop,
-      junctionBottomUri: junctionNeverCatchBottom,
-      parchmentUri: parchment
+      junctionBottomUri: junctionNeverCatchBottom
     }
   },
   [PageName.fire]: {
     imagesUris: {
       pictureUri: fire,
       junctionTopUri: junctionFireTop,
-      junctionBottomUri: junctionFireMiddle,
-      parchmentUri: parchment
+      junctionBottomUri: junctionFireMiddle
     }
   },
   [PageName.cloudFalls]: {
     imagesUris: {
       pictureUri: cloudFalls,
       junctionTopUri: jonctionThreeTop,
-      junctionBottomUri: jonctionThreeBottom,
-      parchmentUri: parchment
+      junctionBottomUri: jonctionThreeBottom
     }
   },
   [PageName.flowerDust]: {
     imagesUris: {
       pictureUri: flowerdust,
-      junctionTopUri: junctionFireTop,
-      junctionBottomUri: junctionFireMiddle,
-      parchmentUri: parchment
+      junctionTopUri: jonctionThreeTop,
+      junctionBottomUri: jonctionThreeBottom,
     }
   }
 }
@@ -80,8 +72,7 @@ export const PageCompositions: Record<PageName, PageComposition> = {
 export enum GraphicParts {
   picture = 'picture',
   junctionTop = 'junctionTop',
-  junctionBottom = 'junctionBottom',
-  parchment = 'parchment'
+  junctionBottom = 'junctionBottom'
 }
 
 export interface PageConfig {
@@ -98,7 +89,7 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
 
   // Mobile Configuration
   [Adaptive.mobile320]: {
-    pages: 4,
+    pages: 5,
     largeur: '100%',
     [PageName.none]: {
       [GraphicParts.picture]: {
@@ -110,10 +101,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0
       },
       [GraphicParts.junctionBottom]: {
-        offset: 0,
-        speed: 0
-      },
-      [GraphicParts.parchment]: {
         offset: 0,
         speed: 0
       }
@@ -130,15 +117,11 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0.85,
         speed: 0.2
-      },
-      [GraphicParts.parchment]: {
-        offset: 0.87,
-        speed: 0.18
       }
     },
     [PageName.fire]: {
       [GraphicParts.picture]: {
-        offset: 0.9,
+        offset: 1,
         speed: 0.2
       },
       [GraphicParts.junctionTop]: {
@@ -148,15 +131,11 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 1.75,
         speed: 0.15
-      },
-      [GraphicParts.parchment]: {
-        offset: 1.65,
-        speed: 0.18
       }
     },
     [PageName.cloudFalls]: {
       [GraphicParts.picture]: {
-        offset: 2.2,
+        offset: 2,
         speed: 0.1
       },
       [GraphicParts.junctionTop]: {
@@ -166,27 +145,19 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 2.96,
         speed: 0.12
-      },
-      [GraphicParts.parchment]: {
-        offset: 2.98,
-        speed: 0.2
       }
     },
     [PageName.flowerDust]: {
       [GraphicParts.picture]: {
-        offset: 3.017,
+        offset: 3,
         speed: 0.2,
       },
       [GraphicParts.junctionTop]: {
-        offset: 5,
+        offset: 3.7,
         speed: 0,
       },
       [GraphicParts.junctionBottom]: {
-        offset: 5,
-        speed: 0,
-      },
-      [GraphicParts.parchment]: {
-        offset: 4,
+        offset: 3.8,
         speed: 0,
       }
     }
@@ -207,10 +178,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0,
         speed: 0
-      },
-      [GraphicParts.parchment]: {
-        offset: 0,
-        speed: 0
       }
     },
     // OK
@@ -226,10 +193,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0.85,
         speed: 0.2
-      },
-      [GraphicParts.parchment]: {
-        offset: 0.89,
-        speed: 0.18
       }
     },
     [PageName.fire]: {
@@ -244,10 +207,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 1.88,
         speed: 0.15
-      },
-      [GraphicParts.parchment]: {
-        offset: 1.85,
-        speed: 0.18
       }
     },
     [PageName.cloudFalls]: {
@@ -262,10 +221,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 2.96,
         speed: 0.12
-      },
-      [GraphicParts.parchment]: {
-        offset: 2.98,
-        speed: 0.2
       }
     },
     [PageName.flowerDust]: {
@@ -279,10 +234,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       },
       [GraphicParts.junctionBottom]: {
         offset: 5,
-        speed: 0,
-      },
-      [GraphicParts.parchment]: {
-        offset: 3.81,
         speed: 0,
       }
     }
@@ -303,10 +254,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0,
         speed: 0
-      },
-      [GraphicParts.parchment]: {
-        offset: 0,
-        speed: 0
       }
     },
     [PageName.neverCatch]: {
@@ -321,10 +268,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0.88,
         speed: 0.2
-      },
-      [GraphicParts.parchment]: {
-        offset: 0.9,
-        speed: 0.18
       }
     },
     [PageName.fire]: {
@@ -339,10 +282,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 1.88,
         speed: 0.15
-      },
-      [GraphicParts.parchment]: {
-        offset: 1.85,
-        speed: 0.18
       }
     },
     [PageName.cloudFalls]: {
@@ -357,10 +296,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 2.96,
         speed: 0.12
-      },
-      [GraphicParts.parchment]: {
-        offset: 2.98,
-        speed: 0.2
       }
     },
     [PageName.flowerDust]: {
@@ -374,10 +309,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       },
       [GraphicParts.junctionBottom]: {
         offset: 5,
-        speed: 0,
-      },
-      [GraphicParts.parchment]: {
-        offset: 3.81,
         speed: 0,
       }
     }
@@ -397,10 +328,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0,
         speed: 0
-      },
-      [GraphicParts.parchment]: {
-        offset: 0,
-        speed: 0
       }
     },
     [PageName.neverCatch]: {
@@ -415,10 +342,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0.8,
         speed: 0.2
-      },
-      [GraphicParts.parchment]: {
-        offset: 0.8,
-        speed: 0.18
       }
     },
     [PageName.fire]: {
@@ -427,21 +350,17 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0.2
       },
       [GraphicParts.junctionTop]: {
-        offset: 1.8,
+        offset: 1.3,
         speed: 0.1
       },
       [GraphicParts.junctionBottom]: {
-        offset: 1.88,
+        offset: 2.5,
         speed: 0.15
-      },
-      [GraphicParts.parchment]: {
-        offset: 1.85,
-        speed: 0.18
       }
     },
     [PageName.cloudFalls]: {
       [GraphicParts.picture]: {
-        offset: 2.2,
+        offset: 2,
         speed: 0.1
       },
       [GraphicParts.junctionTop]: {
@@ -451,15 +370,11 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 2.96,
         speed: 0.12
-      },
-      [GraphicParts.parchment]: {
-        offset: 2.98,
-        speed: 0.2
       }
     },
     [PageName.flowerDust]: {
       [GraphicParts.picture]: {
-        offset: 3.017,
+        offset: 3,
         speed: 0.2,
       },
       [GraphicParts.junctionTop]: {
@@ -468,10 +383,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       },
       [GraphicParts.junctionBottom]: {
         offset: 5,
-        speed: 0,
-      },
-      [GraphicParts.parchment]: {
-        offset: 3.81,
         speed: 0,
       }
     }
@@ -491,10 +402,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0,
         speed: 0
-      },
-      [GraphicParts.parchment]: {
-        offset: 0,
-        speed: 0
       }
     },
     [PageName.neverCatch]: {
@@ -509,10 +416,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0.8,
         speed: 0.2
-      },
-      [GraphicParts.parchment]: {
-        offset: 0.8,
-        speed: 0.18
       }
     },
     [PageName.fire]: {
@@ -527,10 +430,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 1.88,
         speed: 0.15
-      },
-      [GraphicParts.parchment]: {
-        offset: 1.85,
-        speed: 0.18
       }
     },
     [PageName.cloudFalls]: {
@@ -545,10 +444,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 2.96,
         speed: 0.12
-      },
-      [GraphicParts.parchment]: {
-        offset: 2.98,
-        speed: 0.2
       }
     },
     [PageName.flowerDust]: {
@@ -562,10 +457,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       },
       [GraphicParts.junctionBottom]: {
         offset: 5,
-        speed: 0,
-      },
-      [GraphicParts.parchment]: {
-        offset: 3.81,
         speed: 0,
       }
     }
@@ -585,10 +476,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0,
         speed: 0
-      },
-      [GraphicParts.parchment]: {
-        offset: 0,
-        speed: 0
       }
     },
     [PageName.neverCatch]: {
@@ -603,10 +490,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0.8,
         speed: 0.2
-      },
-      [GraphicParts.parchment]: {
-        offset: 0.8,
-        speed: 0.18
       }
     },
     [PageName.fire]: {
@@ -621,10 +504,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 1.88,
         speed: 0.15
-      },
-      [GraphicParts.parchment]: {
-        offset: 1.85,
-        speed: 0.18
       }
     },
     [PageName.cloudFalls]: {
@@ -639,10 +518,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 2.96,
         speed: 0.12
-      },
-      [GraphicParts.parchment]: {
-        offset: 2.98,
-        speed: 0.2
       }
     },
     [PageName.flowerDust]: {
@@ -656,10 +531,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       },
       [GraphicParts.junctionBottom]: {
         offset: 5,
-        speed: 0,
-      },
-      [GraphicParts.parchment]: {
-        offset: 3.81,
         speed: 0,
       }
     }
@@ -679,10 +550,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0,
         speed: 0
-      },
-      [GraphicParts.parchment]: {
-        offset: 0,
-        speed: 0
       }
     },
     [PageName.neverCatch]: {
@@ -697,10 +564,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 0.8,
         speed: 0.2
-      },
-      [GraphicParts.parchment]: {
-        offset: 0.8,
-        speed: 0.18
       }
     },
     [PageName.fire]: {
@@ -715,10 +578,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 1.88,
         speed: 0.15
-      },
-      [GraphicParts.parchment]: {
-        offset: 1.85,
-        speed: 0.18
       }
     },
     [PageName.cloudFalls]: {
@@ -733,10 +592,6 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 2.96,
         speed: 0.12
-      },
-      [GraphicParts.parchment]: {
-        offset: 2.98,
-        speed: 0.2
       }
     },
     [PageName.flowerDust]: {
@@ -751,13 +606,8 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
       [GraphicParts.junctionBottom]: {
         offset: 5,
         speed: 0,
-      },
-      [GraphicParts.parchment]: {
-        offset: 3.81,
-        speed: 0,
       }
     }
-
   }
 }
 
