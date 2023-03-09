@@ -5,14 +5,16 @@ import junctionNeverCatchTop from './imgs/neverCatch/junction_top_nevercatch.svg
 import junctionNeverCatchBottom from './imgs/neverCatch/junction_bottom_nevercatch.svg';
 
 import fire from './imgs/fire/fire.svg';
-import junctionFireTop from './imgs/fire/jonction_middle_two.svg';
-import junctionFireMiddle from './imgs/fire/jonction_edge_two.svg';
+import junctionFireTop from './imgs/fire/jonction_top.svg';
+import junctionFireMiddle from './imgs/fire/jonction_bottom.svg';
 
 import cloudFalls from './imgs/cloudFalls/cloud_falls.svg';
 import jonctionThreeTop from './imgs/cloudFalls/jonction_top_three.svg';
 import jonctionThreeBottom from './imgs/cloudFalls/jonction_bottom_three.svg';
 
 import flowerdust from './imgs/flowerdust/flowerdust.svg';
+import jonctionTopFour from './imgs/flowerdust/jonction_top_four.svg';
+import jonctionTopBottom from './imgs/flowerdust/jonction_bottom_four.svg';
 
 
 export enum PageName {
@@ -63,8 +65,8 @@ export const PageCompositions: Record<PageName, PageComposition> = {
   [PageName.flowerDust]: {
     imagesUris: {
       pictureUri: flowerdust,
-      junctionTopUri: jonctionThreeTop,
-      junctionBottomUri: jonctionThreeBottom,
+      junctionTopUri: jonctionTopFour,
+      junctionBottomUri: jonctionTopBottom,
     }
   }
 }
@@ -89,7 +91,7 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
 
   // Mobile Configuration
   [Adaptive.mobile320]: {
-    pages: 5,
+    pages: 4,
     largeur: '100%',
     [PageName.none]: {
       [GraphicParts.picture]: {
@@ -111,11 +113,11 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0
       },
       [GraphicParts.junctionTop]: {
-        offset: 0.38,
+        offset: 0.37,
         speed: 0.1
       },
       [GraphicParts.junctionBottom]: {
-        offset: 0.85,
+        offset: 0.9,
         speed: 0.2
       }
     },
@@ -125,11 +127,11 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0.2
       },
       [GraphicParts.junctionTop]: {
-        offset: 1.6,
+        offset: 1.72,
         speed: 0.1
       },
       [GraphicParts.junctionBottom]: {
-        offset: 1.75,
+        offset: 1.87,
         speed: 0.15
       }
     },
@@ -139,11 +141,11 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0.1
       },
       [GraphicParts.junctionTop]: {
-        offset: 2.9,
+        offset: 2.64,
         speed: 0.15
       },
       [GraphicParts.junctionBottom]: {
-        offset: 2.96,
+        offset: 2.89,
         speed: 0.12
       }
     },
@@ -153,12 +155,12 @@ export const ParallaxConfig: Record<Adaptive, Record<PageName, Record<GraphicPar
         speed: 0.2,
       },
       [GraphicParts.junctionTop]: {
-        offset: 3.7,
-        speed: 0,
+        offset: 3.74,
+        speed: 0.1,
       },
       [GraphicParts.junctionBottom]: {
-        offset: 3.8,
-        speed: 0,
+        offset: 3.9,
+        speed: 0.15,
       }
     }
   },

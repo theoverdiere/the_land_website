@@ -5,8 +5,6 @@ import { PageName, ParallaxConfig } from "./ParallaxConfig";
 
 import ParallaxComposition from "./ParallaxComposition";
 import ParchmentPlayer from "../ParchmentPlayer";
-import LinkPage from "./LinkPage";
-import linkPageSvg from "./link_page.svg";
 
 function ParallaxComponent({ children }: { children: any }) {
     const width: Adaptive = useAdaptiveTriggers({});
@@ -21,7 +19,6 @@ function ParallaxComponent({ children }: { children: any }) {
             className="parallaxContainer"
         >
             {/* Inverted Sens */}
-
             <ParallaxLayer
                 sticky={{
                     start: 0,
@@ -34,23 +31,12 @@ function ParallaxComponent({ children }: { children: any }) {
                 </div>
             </ParallaxLayer>
 
-            <div id="linkPage">
-                <ParallaxLayer offset={4}>
-                    <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                        <img src={linkPageSvg} />
-                        {/* <LinkPage>
-                        </LinkPage> */}
-                    </div>
-                </ParallaxLayer>
-            </div>
-
             {/* Flowerdustr */}
             <div id="flowerDust">
                 <ParallaxComposition  >
                     {defineProps(children, PageName.flowerDust, parallax, width)}
                 </ParallaxComposition>
             </div>
-
 
             {/* CloudFalls */}
             <div id="cloudFalls">
@@ -72,18 +58,7 @@ function ParallaxComponent({ children }: { children: any }) {
                     {defineProps(children, PageName.neverCatch, parallax, width)}
                 </ParallaxComposition>
             </div>
-
-            {/* <ParallaxLayer
-                //  className="grainLayer" 
-                sticky={{
-                    start: 0.9,
-                    end: 4
-                }}>
-                <img src={parchment}></img>
-            </ParallaxLayer> */}
-
         </Parallax >
-
     )
 }
 

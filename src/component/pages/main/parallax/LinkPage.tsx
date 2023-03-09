@@ -4,12 +4,11 @@ function LinkPage({ children }: { children: any }) {
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170 2362">
             <defs>
                 <style>
-                    {".cls-1{stroke:#fff;stroke-miterlimit:10;stroke-width:5px;}.cls-2{font-size:115px;}.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{fill:#fff;font-family:BOOTLE;}.cls-3{font-size:114px;}.cls-4{font-size:112px;}.cls-5{font-size:119px;}.cls - 6{font - size:113px;}.cls-7{font - size:74px;}"}
+                    {".cls-1{stroke:#fff;stroke-miterlimit:10;stroke-width:5px;}.cls-2{font-size:115px;}.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{fill:#fff;font-family:BOOTLE;}.cls-3{font-size:114px;}.cls-4{font-size:112px;}.cls-5{font-size:119px;}.cls-6{font-size:113px;}.cls-7{font-size:74px;}"}
                 </style>
             </defs>
             <g id="LINK">
-                <rect id="BACKGROUND" width="1170" height="2362" />
-                <g id="INSTAGRAM">
+                <g id="INSTAGRAM" onClick={() => goTo()}>
                     <rect id="CADRE" className="cls-1" x="227.5" y="807.5" width="732" height="175" />
                     <g id="TEXTE">
                         <text className="cls-2" transform="translate(794.33 934.97)">M</text>
@@ -23,7 +22,7 @@ function LinkPage({ children }: { children: any }) {
                         <text className="cls-2" transform="translate(335.33 934.97)">i</text>
                     </g>
                 </g>
-                <g id="SPOTIFY">
+                <g id="SPOTIFY" onClick={() => goTo()}>
                     <rect className="cls-1" x="226.5" y="1028.5" width="732" height="175" />
                     <g id="TEXTE-2" data-name="TEXTE">
                         <text className="cls-2" transform="translate(735.33 1153.97)">y</text>
@@ -35,7 +34,7 @@ function LinkPage({ children }: { children: any }) {
                         <text className="cls-5" transform="translate(407.33 1156.8)">S</text>
                     </g>
                 </g>
-                <g id="YOUTUBE">
+                <g id="YOUTUBE" onClick={() => goTo()}>
                     <rect className="cls-1" x="226.5" y="1250.5" width="732" height="175" />
                     <g id="TEXTE-3" data-name="TEXTE">
                         <text className="cls-2" transform="translate(410.33 1377.97)">y</text>
@@ -50,6 +49,10 @@ function LinkPage({ children }: { children: any }) {
             </g>
         </svg>
     )
+
+    function goTo() {
+        console.log("kilkou");
+    }
 }
 
 export default LinkPage;
