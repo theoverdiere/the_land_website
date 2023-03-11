@@ -43,6 +43,23 @@ body {
     background-color: black;
 }
 
+.linkPageContainer {
+    display: flex;
+    margin-top: 10px;
+    width: 100vw;
+    /* background-color: blue; */
+}
+
+.linkPageSvg {
+    height: 18vh;
+    width: 15vw;
+}
+
+.linkPageDiv {
+    width: 85vw;
+}
+
+
 /* Couche superieure */
 .grainLayer {
     /* height: 100vh; */
@@ -54,4 +71,9 @@ body {
     background-color: red;
     background-attachment: fixed;
      */
+}
+
+*:focus {
+    outline: 0;
+    outline: none;
 }

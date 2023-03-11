@@ -5,6 +5,7 @@ import { PageName, ParallaxConfig } from "./ParallaxConfig";
 
 import ParallaxComposition from "./ParallaxComposition";
 import ParchmentPlayer from "../ParchmentPlayer";
+import LinkPage from "./LinkPage";
 
 function ParallaxComponent({ children }: { children: any }) {
     const width: Adaptive = useAdaptiveTriggers({});
@@ -24,8 +25,12 @@ function ParallaxComponent({ children }: { children: any }) {
                     start: 0,
                     end: 4
                 }}
-                style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'flex-end' }}
+                style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'space-between' }}
             >
+                <div className="linkPage">
+                    <LinkPage></LinkPage>
+                </div>
+
                 <div >
                     <ParchmentPlayer refScroll={parallax}></ParchmentPlayer>
                 </div>

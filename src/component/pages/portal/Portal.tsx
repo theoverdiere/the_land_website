@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
+import { RouteConfig } from '../shared/GlobalConfig';
 
 // Animation Config for the global container page of the portal
 const portalContainerVariants = {
@@ -101,7 +102,7 @@ function Portal() {
                         {".cls-1,.cls-3{fill:#000}.cls-1{stroke:#000}.cls-3,.cls-4{stroke-miterlimit:10;stroke-width:5px}.cls-2{fill:#fff}.cls-3,.cls-4{stroke:#fff;fill:#000}.cls-5{stroke:#fff;stroke-width:5px;fill-opacity:0}.cls-6{stroke:#fff;stroke-width:5px;fill:#fff}"}
                     </style>
                 </defs>
-                <NavLink to="/the-tales">
+                <NavLink to={RouteConfig.mainPage}>
 
                     <g id="BACKGROUND">
                         <path id="BACKGROUND_BLACK" className="cls-1" d="M2.5 2.5H1172.5V2028.5H2.5z" />

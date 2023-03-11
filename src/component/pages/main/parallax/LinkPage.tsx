@@ -1,58 +1,59 @@
-function LinkPage({ children }: { children: any }) {
-    return (
-        <svg id="LINK_CONTENT"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1170 2362">
-            <defs>
-                <style>
-                    {".cls-1{stroke:#fff;stroke-miterlimit:10;stroke-width:5px;}.cls-2{font-size:115px;}.cls-2,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7{fill:#fff;font-family:BOOTLE;}.cls-3{font-size:114px;}.cls-4{font-size:112px;}.cls-5{font-size:119px;}.cls-6{font-size:113px;}.cls-7{font-size:74px;}"}
-                </style>
-            </defs>
-            <g id="LINK">
-                <g id="INSTAGRAM" onClick={() => goTo()}>
-                    <rect id="CADRE" className="cls-1" x="227.5" y="807.5" width="732" height="175" />
-                    <g id="TEXTE">
-                        <text className="cls-2" transform="translate(794.33 934.97)">M</text>
-                        <text className="cls-2" transform="translate(727.33 934.97)">a</text>
-                        <text className="cls-3" transform="translate(664.33 934.6)">R</text>
-                        <text className="cls-4" transform="translate(598.33 934.85)">g</text>
-                        <text className="cls-2" transform="translate(538.33 934.97)">a</text>
-                        <text className="cls-2" transform="translate(485.33 934.97)">t</text>
-                        <text className="cls-5" transform="translate(431.33 936.8)">S</text>
-                        <text className="cls-2" transform="translate(370.33 934.97)">N</text>
-                        <text className="cls-2" transform="translate(335.33 934.97)">i</text>
-                    </g>
-                </g>
-                <g id="SPOTIFY" onClick={() => goTo()}>
-                    <rect className="cls-1" x="226.5" y="1028.5" width="732" height="175" />
-                    <g id="TEXTE-2" data-name="TEXTE">
-                        <text className="cls-2" transform="translate(735.33 1153.97)">y</text>
-                        <text className="cls-2" transform="translate(681.33 1153.97)">f</text>
-                        <text className="cls-2" transform="translate(644.33 1153.97)">i</text>
-                        <text className="cls-2" transform="translate(583.33 1153.97)">t</text>
-                        <text className="cls-2" transform="translate(520.33 1154.3)">o</text>
-                        <text className="cls-2" transform="translate(466.33 1153.97)">p</text>
-                        <text className="cls-5" transform="translate(407.33 1156.8)">S</text>
-                    </g>
-                </g>
-                <g id="YOUTUBE" onClick={() => goTo()}>
-                    <rect className="cls-1" x="226.5" y="1250.5" width="732" height="175" />
-                    <g id="TEXTE-3" data-name="TEXTE">
-                        <text className="cls-2" transform="translate(410.33 1377.97)">y</text>
-                        <text className="cls-6" transform="translate(460.33 1377.89)">o</text>
-                        <text className="cls-3" transform="translate(520.33 1377.26)">u</text>
-                        <text className="cls-3" transform="translate(579.33 1377.26)">t</text>
-                        <text className="cls-2" transform="translate(636.33 1377.97)">u</text>
-                        <text className="cls-7" transform="translate(696.33 1377.98)">b</text>
-                        <text className="cls-2" transform="translate(745.33 1377.97)">e</text>
-                    </g>
-                </g>
-            </g>
-        </svg>
-    )
+import { LinkConfig } from "../../shared/GlobalConfig";
 
-    function goTo() {
-        console.log("kilkou");
-    }
+function LinkPage() {
+    return (
+        <div className="linkPageContainer">
+            <div className="linkPageDiv">
+
+            </div>
+            <svg className="linkPageSvg" id="CONTENT" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 133 443.88"><defs>
+                <style>{".className1{mask:url(#masklink1);}.className10,.className11,.className2,.className4,.className5,.className6,.className7,.className8,.className9{stroke:#000;stroke-miterlimit:10;}.className11,.className2,.className4,.className9{stroke-width:5px;}.className3{mask:url(#masklink2);}.className4{fill:#d8c398;}.className10,.className11,.className5,.className7,.className8,.className9{fill:none;}.className10,.className5{stroke-width:11px;}.className10,.className7,.className8,.className9{stroke-linecap:round;}.className7{stroke-width:9px;}.className8{stroke-width:7px;}.className12{filter:url(#luminosity-noclip);}"}</style>
+                <filter id="luminosity-noclip" x="245" y="-12798" width="205" height="32766" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#fff" result="bg" /><feBlend in="SourceGraphic" in2="bg" />
+                </filter>
+                <mask id="masklink1" x="245" y="-12798" width="205" height="32766" maskUnits="userSpaceOnUse">
+                    <g className="className12" />
+                </mask>
+                <mask id="masklink2" x="-36" y="-36.5" width="205" height="517" maskUnits="userSpaceOnUse">
+                    <g transform="translate(-281 -493.5)">
+                        <g className="className1">
+                            <g id="DEGRADE">
+                                <image width="205" height="517" transform="translate(245 457)" xlinkHref="data:image/png;base64,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" />
+                            </g>
+                        </g>
+                    </g>
+                </mask>
+            </defs>
+                <g id="LINK">
+                    <path id="NOIR" className="className2" d="M406.84,933.73,351,870.59a2.66,2.66,0,0,0-3.95-.05L288.12,934a2.67,2.67,0,0,1-4.62-1.82v-417A19.17,19.17,0,0,1,302.67,496h90a18.83,18.83,0,0,1,18.83,18.83V932A2.66,2.66,0,0,1,406.84,933.73Z" transform="translate(-281 -493.5)" />
+                    <g className="className3">
+                        <path id="DEGRADE-2" data-name="DEGRADE" className="className4" d="M406.84,933.73,351,870.59a2.66,2.66,0,0,0-3.95-.05L288.12,934a2.67,2.67,0,0,1-4.62-1.82v-417A19.17,19.17,0,0,1,302.67,496h90a18.83,18.83,0,0,1,18.83,18.83V932A2.66,2.66,0,0,1,406.84,933.73Z" transform="translate(-281 -493.5)" />
+                    </g>
+                    <g id="youtube" onClick={() => openInNewTab(LinkConfig.youtube)}>
+                        <rect className="className5" x="25" y="249" width="83" height="78" rx="17" />
+                        <polygon className="className6" points="62.63 277 62.63 299 76.28 288.22 62.63 277" />
+                        <rect id="CLICK_YOUTUBE" className="buttonOpacity" x="5.5" y="238.5" width="122" height="103" rx="13" />
+                    </g>
+                    <g id="spotify" onClick={() => openInNewTab(LinkConfig.spotify)}>
+                        <path className="className7" d="M326.78,660.89c1-.59,11.54-3.41,25.22.84,12.61,3.91,20.2,11.67,20.85,12.91" transform="translate(-281 -493.5)" />
+                        <path className="className8" d="M326.27,674.35c.83-.5,9.72-2.94,21.24.64,10.6,3.29,17,9.89,17.51,10.94" transform="translate(-281 -493.5)" />
+                        <path className="className9" d="M328.35,685.81c.6-.36,7.08-2.14,15.45.47,7.71,2.39,12.34,7.19,12.74,8" transform="translate(-281 -493.5)" />
+                        <circle className="className10" cx="66.75" cy="180.25" r="41.75" />
+                        <rect id="CLICK_SPOTIFY" className="buttonOpacity" x="5.5" y="124.5" width="122" height="112" rx="13" />
+                    </g>
+                    <g id="instagram" onClick={() => openInNewTab(LinkConfig.instagram)}>
+                        <rect className="className5" x="24.5" y="32" width="84" height="78" rx="21" />
+                        <ellipse className="className11" cx="66.03" cy="71" rx="15.53" ry="16" />
+                        <ellipse className="className6" cx="84.87" cy="48.5" rx="4.37" ry="4.5" />
+                        <rect id="CLICK_INSTAGRAM" className="buttonOpacity" x="5.5" y="5.5" width="122" height="117" rx="13" />
+                    </g>
+                </g>
+            </svg >
+        </div>
+    )
 }
+
+const openInNewTab = (urlPage: string | URL | undefined) => {
+    window.open(urlPage, '_blank', 'noreferrer');
+};
 
 export default LinkPage;
