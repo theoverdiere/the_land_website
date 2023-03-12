@@ -17,7 +17,7 @@ function ParallaxComposition({ children }: { children: any }) {
                 speed={pageConfig.picture.speed}
             >
                 <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                    <img src={composition.imagesUris.pictureUri} />
+                    {composition.imagesUris.pictureSvg}
                 </div>
             </ParallaxLayer>
             <ParallaxLayer id="junctionTop"
@@ -25,7 +25,7 @@ function ParallaxComposition({ children }: { children: any }) {
                 speed={pageConfig.junctionTop.speed}
             >
                 <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                    <img src={composition.imagesUris.junctionTopUri} />
+                    {composition.imagesUris.junctionTopUri}
                 </div>
             </ParallaxLayer>
             <ParallaxLayer id="junctionBottom"
@@ -33,11 +33,13 @@ function ParallaxComposition({ children }: { children: any }) {
                 speed={pageConfig.junctionBottom.speed}
             >
                 <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                    <img src={composition.imagesUris.junctionBottomUri} />
+                    {composition.imagesUris.junctionBottomUri}
                 </div>
             </ParallaxLayer>
         </div>
     )
+
 }
+
 
 export default ParallaxComposition;

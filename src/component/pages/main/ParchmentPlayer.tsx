@@ -1,19 +1,14 @@
 import { IParallax } from "@react-spring/parallax";
 import { useState } from "react";
-import { PageName } from "./parallax/ParallaxConfig";
+import { AudioMap } from "../shared/GlobalConfig";
+import { PageName, ReleasedTrack } from "./parallax/ParallaxConfig";
 
-const audioMap = new Map<PageName, HTMLAudioElement>();
-audioMap.set(PageName.neverCatch, new Audio("https://commondatastorage.googleapis.com/codeskulptor-demos/pyman_assets/intromusic.ogg"));
-audioMap.set(PageName.fire, new Audio("https://commondatastorage.googleapis.com/codeskulptor-assets/Evillaugh.ogg"));
-audioMap.set(PageName.cloudFalls, new Audio("http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3"));
-audioMap.set(PageName.flowerDust, new Audio("https://commondatastorage.googleapis.com/codeskulptor-demos/riceracer_assets/music/start.ogg"));
-
+// Released tracks list
 
 function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }) {
     setEndingAudioListener();
     const [isCurrentPlayingTrack, setCurrentPlayingTrack] = useState(PageName.none);
     const [isPlaying, setIsPlaying] = useState(true);
-
     return (
         <svg id="CONTENT" style={{ height: '18vh', width: '90%', marginLeft: '10px' }}
             xmlns="http://www.w3.org/2000/svg"
@@ -58,25 +53,27 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
                             </g>
                             <rect id="SURF_FL" className="buttonOpacity" x="10.03" y="471.5" width="667.5" height="132" />
                         </g>
-                        <g id="FLOWERDUST_ICONE" >
-                            {isCurrentPlayingTrack === PageName.flowerDust ?
-                                <g id="FL_PAUSE">
-                                    <g id="FL_PAUSE-2" data-name="FL_PAUSE">
-                                        <rect x="722.03" y="485" width="28" height="94" />
-                                        <rect x="766.03" y="485" width="28" height="94" />
+                        {ReleasedTrack.includes(PageName.cloudFalls) ?
+                            <g id="FLOWERDUST_ICONE" >
+                                {isCurrentPlayingTrack === PageName.flowerDust ?
+                                    <g id="FL_PAUSE">
+                                        <g id="FL_PAUSE-2" data-name="FL_PAUSE">
+                                            <rect x="722.03" y="485" width="28" height="94" />
+                                            <rect x="766.03" y="485" width="28" height="94" />
+                                        </g>
+                                        <rect id="SURF_FL_PA" className="buttonOpacity" x="698.53" y="471.5" width="129" height="132" />
                                     </g>
-                                    <rect id="SURF_FL_PA" className="buttonOpacity" x="698.53" y="471.5" width="129" height="132" />
-                                </g>
-                                :
-                                <g id="FL_PLAY" >
-                                    <g id="PLAY_FL">
-                                        <polyline id="NC_PLAY" points="722.03 484 722.03 577.75 794.35 531.01" />
-                                        <rect id="SURF_FL_PL" className="buttonOpacity" x="698.53" y="471.5" width="129" height="132" />
+                                    :
+                                    <g id="FL_PLAY" >
+                                        <g id="PLAY_FL">
+                                            <polyline id="NC_PLAY" points="722.03 484 722.03 577.75 794.35 531.01" />
+                                            <rect id="SURF_FL_PL" className="buttonOpacity" x="698.53" y="471.5" width="129" height="132" />
+                                        </g>
+                                        <rect id="SURF_FL_PL-2" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="471.5" width="129" height="132" />
                                     </g>
-                                    <rect id="SURF_FL_PL-2" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="471.5" width="129" height="132" />
-                                </g>
-                            }
-                        </g>
+                                }
+                            </g>
+                            : <div></div>}
                     </g>
 
                     <g id="CLOUDFALLS" onClick={() => managePlayer(PageName.cloudFalls)}>
@@ -95,25 +92,27 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
                             </g>
                             <rect id="SURF_CF" className="buttonOpacity" x="10.03" y="333.5" width="667.5" height="132" />
                         </g>
-                        <g id="CLOUDFALLS_ICONE">
-                            {isCurrentPlayingTrack === PageName.cloudFalls ?
-                                <g id="CF_PAUSE">
-                                    <g id="CF_PAUSE-2" data-name="CF_PAUSE">
-                                        <rect x="722.03" y="347" width="28" height="94" />
-                                        <rect x="766.03" y="347" width="28" height="94" />
+                        {ReleasedTrack.includes(PageName.cloudFalls) ?
+                            <g id="CLOUDFALLS_ICONE">
+                                {isCurrentPlayingTrack === PageName.cloudFalls ?
+                                    <g id="CF_PAUSE">
+                                        <g id="CF_PAUSE-2" data-name="CF_PAUSE">
+                                            <rect x="722.03" y="347" width="28" height="94" />
+                                            <rect x="766.03" y="347" width="28" height="94" />
+                                        </g>
+                                        <rect id="SURF_CF_PA" className="buttonOpacity" x="698.53" y="333.5" width="129" height="132" />
                                     </g>
-                                    <rect id="SURF_CF_PA" className="buttonOpacity" x="698.53" y="333.5" width="129" height="132" />
-                                </g>
-                                :
-                                <g id="CF_PLAY">
-                                    <g id="PLAY_CF">
-                                        <polyline id="NC_PLAY-2" data-name="NC_PLAY" points="722.03 346 722.03 439.75 794.35 393.01" />
-                                        <rect id="SURF_FL_PL-3" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="333.5" width="129" height="132" />
+                                    :
+                                    <g id="CF_PLAY">
+                                        <g id="PLAY_CF">
+                                            <polyline id="NC_PLAY-2" data-name="NC_PLAY" points="722.03 346 722.03 439.75 794.35 393.01" />
+                                            <rect id="SURF_FL_PL-3" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="333.5" width="129" height="132" />
+                                        </g>
+                                        <rect id="SURF_CF_PL" className="buttonOpacity" x="698.53" y="333.5" width="129" height="132" />
                                     </g>
-                                    <rect id="SURF_CF_PL" className="buttonOpacity" x="698.53" y="333.5" width="129" height="132" />
-                                </g>
-                            }
-                        </g>
+                                }
+                            </g> : <div></div>}
+
                     </g>
 
                     <g id="FIRE" onClick={() => managePlayer(PageName.fire)}>
@@ -126,25 +125,30 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
                             </g>
                             <rect id="SURF_FI" className="buttonOpacity" x="10.03" y="197.5" width="667.5" height="132" />
                         </g>
-                        <g id="FIRE_ICONE">
-                            {isCurrentPlayingTrack === PageName.fire ?
-                                <g id="FI_PAUSE">
-                                    <rect id="SURF_FL_PA-2" data-name="SURF_FL_PA" className="buttonOpacity" x="698.53" y="197.5" width="129" height="132" />
-                                    <g id="FL_PAUSE-3" data-name="FL_PAUSE">
-                                        <rect x="722.03" y="211" width="28" height="94" />
-                                        <rect x="766.03" y="211" width="28" height="94" />
-                                    </g>
+                        {
+                            ReleasedTrack.includes(PageName.fire) ?
+                                <g id="FIRE_ICONE">
+                                    {isCurrentPlayingTrack === PageName.fire ?
+                                        <g id="FI_PAUSE">
+                                            <rect id="SURF_FL_PA-2" data-name="SURF_FL_PA" className="buttonOpacity" x="698.53" y="197.5" width="129" height="132" />
+                                            <g id="FL_PAUSE-3" data-name="FL_PAUSE">
+                                                <rect x="722.03" y="211" width="28" height="94" />
+                                                <rect x="766.03" y="211" width="28" height="94" />
+                                            </g>
+                                        </g>
+                                        :
+                                        <g id="FI_PLAY">
+                                            <g id="PLAY_FL-2" data-name="PLAY_FL">
+                                                <rect id="SURF_FL_PL-4" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="197.5" width="129" height="132" />
+                                                <polyline id="NC_PLAY-3" data-name="NC_PLAY" points="722.03 210 722.03 303.75 794.35 257.01" />
+                                            </g>
+                                            <rect id="SURF_FL_PL-5" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="197.5" width="129" height="132" />
+                                        </g>
+                                    }
                                 </g>
-                                :
-                                <g id="FI_PLAY">
-                                    <g id="PLAY_FL-2" data-name="PLAY_FL">
-                                        <rect id="SURF_FL_PL-4" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="197.5" width="129" height="132" />
-                                        <polyline id="NC_PLAY-3" data-name="NC_PLAY" points="722.03 210 722.03 303.75 794.35 257.01" />
-                                    </g>
-                                    <rect id="SURF_FL_PL-5" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="197.5" width="129" height="132" />
-                                </g>
-                            }
-                        </g>
+                                : <div></div>
+                        }
+
                     </g>
 
                     <g id="NEVER_CATCH" onClick={() => managePlayer(PageName.neverCatch)}>
@@ -168,14 +172,13 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
                                 <g id="BUTTON_PAUSE">
                                     <rect id="SURF_NC_PA" className="buttonOpacity" x="698.53" y="62.5" width="129" height="132" />
                                     <g id="NC_PAUSE" data-name="NC_PAUSE">
-                                        <rect x="722.03" y="76" width="28" height="94" />
-                                        <rect x="766.03" y="76" width="28" height="94" />
+                                        <rect x="722.03" y="87" width="28" height="94" />
+                                        <rect x="766.03" y="87" width="28" height="94" />
                                     </g>
                                 </g> :
                                 <g id="BUTTON_PLAY" data-name="NC_PLAY">
                                     <g id="PLAY_NC">
-                                        <polyline id="NC_PLAY-5" data-name="NC_PLAY" points="722.03 75 722.03 168.75 794.35 122.01" />
-                                        <rect id="SURF_FL_PL-6" data-name="SURF_FL_PL" className="buttonOpacity" x="698.53" y="62.5" width="129" height="132" />
+                                        <polyline id="NC_PLAY-5" data-name="NC_PLAY" points="722.03 86 722.03 179.75 794.35 133.01" />
                                     </g>
                                     <rect id="SURF_NC_PL" className="buttonOpacity" x="698.53" y="62.5" width="129" height="132" />
                                 </g>
@@ -192,7 +195,9 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
      * @param pageName : name of the tale
      */
     function managePlayer(pageName: PageName) {
-        launchOrStopTrack(pageName);
+
+        if (ReleasedTrack.includes(pageName))
+            launchOrStopTrack(pageName);
 
         if (isCurrentPlayingTrack !== pageName)
             scrollToPicture(pageName);
@@ -227,7 +232,7 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
         if (pageName === isCurrentPlayingTrack)
             pageName = PageName.none;
 
-        audioMap.forEach(value => value.pause());
+        AudioMap.forEach(value => value.pause());
         playAndFadeInAudio(pageName);
 
         setIsPlaying(!isPlaying);
@@ -235,10 +240,10 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
     }
 
     function setEndingAudioListener() {
-        if (!audioMap)
+        if (!AudioMap)
             return;
 
-        audioMap.forEach(value => {
+        AudioMap.forEach(value => {
             value.onended = () => {
                 setIsPlaying(false);
                 setCurrentPlayingTrack(PageName.none)
@@ -250,16 +255,16 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
         if (pageName === PageName.none)
             return;
 
-        const audio = audioMap.get(pageName);
+        const audio = AudioMap.get(pageName);
         audio!.volume = 0.0;
         audio?.play();
-        // let interval = setInterval(function () {
-        //     if (audio!.volume > 0.99) {
-        //         clearInterval(interval);
-        //         return;
-        //     }
-        //     audio!.volume += 0.1;
-        // }, 200);
+        let interval = setInterval(function () {
+            if (audio!.volume > 0.99) {
+                clearInterval(interval);
+                return;
+            }
+            audio!.volume += 0.1;
+        }, 200);
     }
 }
 

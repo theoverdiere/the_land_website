@@ -8,7 +8,7 @@ function LinkPage() {
             </div>
             <svg className="linkPageSvg" id="CONTENT" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 133 443.88"><defs>
                 <style>{".className1{mask:url(#masklink1);}.className10,.className11,.className2,.className4,.className5,.className6,.className7,.className8,.className9{stroke:#000;stroke-miterlimit:10;}.className11,.className2,.className4,.className9{stroke-width:5px;}.className3{mask:url(#masklink2);}.className4{fill:#d8c398;}.className10,.className11,.className5,.className7,.className8,.className9{fill:none;}.className10,.className5{stroke-width:11px;}.className10,.className7,.className8,.className9{stroke-linecap:round;}.className7{stroke-width:9px;}.className8{stroke-width:7px;}.className12{filter:url(#luminosity-noclip);}"}</style>
-                <filter id="luminosity-noclip" x="245" y="-12798" width="205" height="32766" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-color="#fff" result="bg" /><feBlend in="SourceGraphic" in2="bg" />
+                <filter id="luminosity-noclip" x="245" y="-12798" width="205" height="32766" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB"><feFlood floodColor="#fff" result="bg" /><feBlend in="SourceGraphic" in2="bg" />
                 </filter>
                 <mask id="masklink1" x="245" y="-12798" width="205" height="32766" maskUnits="userSpaceOnUse">
                     <g className="className12" />
