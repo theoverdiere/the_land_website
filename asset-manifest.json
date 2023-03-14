@@ -1,13 +1,11 @@
 {
   "files": {
-    "main.css": "/the_land_website/static/css/main.1d277d3b.css",
-    "main.js": "/the_land_website/static/js/main.285eb1b1.js",
+    "main.css": "/the_land_website/static/css/main.5f6a9bae.css",
+    "main.js": "/the_land_website/static/js/main.ffcabdd0.js",
     "static/js/787.c08a3c3c.chunk.js": "/the_land_website/static/js/787.c08a3c3c.chunk.js",
-    "static/media/cloud_falls.svg": "/the_land_website/static/media/cloud_falls.7bea0e8ac8badc240cc1876c08e21d02.svg",
-    "static/media/nevercatch.svg": "/the_land_website/static/media/nevercatch.42e904c5b2b4d25978211dcaadb8d920.svg",
-    "static/media/fire.svg": "/the_land_website/static/media/fire.cf8e09e70484427440cce9d8ebb9fbbc.svg",
+    "static/media/flowerdust_soon.svg": "/the_land_website/static/media/flowerdust_soon.a06f82e7b4d9aa9fe28f2af487d4e54e.svg",
+    "static/media/fire_soon.svg": "/the_land_website/static/media/fire_soon.b29626f8a1ccbc1b47f0df7972f4da94.svg",
     "static/media/junction_top_nevercatch.svg": "/the_land_website/static/media/junction_top_nevercatch.ff3565fd5ac0119e57c3d12a42a1e375.svg",
-    "static/media/flowerdust.svg": "/the_land_website/static/media/flowerdust.c2034b036fa21f2530bdfd02ed64a44c.svg",
     "static/media/jonction_top_four.svg": "/the_land_website/static/media/jonction_top_four.d9d2353cde2e31f792d1c16c684c623f.svg",
     "static/media/jonction_bottom_three.svg": "/the_land_website/static/media/jonction_bottom_three.b7c35ace88e749f41dcd4d0fb1add601.svg",
     "static/media/jonction_top_three.svg": "/the_land_website/static/media/jonction_top_three.22c4a010d9e2efa7669768fdce1d5da1.svg",
@@ -16,12 +14,13 @@
     "static/media/junction_bottom_nevercatch.svg": "/the_land_website/static/media/junction_bottom_nevercatch.a4263808217508a6344b879a608fc311.svg",
     "static/media/jonction_bottom.svg": "/the_land_website/static/media/jonction_bottom.48220bee24a664a77fcd4aebbeabfeba.svg",
     "index.html": "/the_land_website/index.html",
-    "main.1d277d3b.css.map": "/the_land_website/static/css/main.1d277d3b.css.map",
-    "main.285eb1b1.js.map": "/the_land_website/static/js/main.285eb1b1.js.map",
+    "static/media/cloud_falls_soon.svg": "/the_land_website/static/media/cloud_falls_soon.1ad072cdc40737fcb912c9abd5ca50d5.svg",
+    "main.5f6a9bae.css.map": "/the_land_website/static/css/main.5f6a9bae.css.map",
+    "main.ffcabdd0.js.map": "/the_land_website/static/js/main.ffcabdd0.js.map",
     "787.c08a3c3c.chunk.js.map": "/the_land_website/static/js/787.c08a3c3c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d277d3b.css",
-    "static/js/main.285eb1b1.js"
+    "static/css/main.5f6a9bae.css",
+    "static/js/main.ffcabdd0.js"
   ]
 }
