@@ -7,9 +7,7 @@ import { RouteConfig } from './component/pages/shared/GlobalConfig';
 
 
 function App() {
-
     const location = useLocation();
-
     return (
         <div className='App'>
             <AnimatePresence>

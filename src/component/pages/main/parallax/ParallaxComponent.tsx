@@ -1,25 +1,25 @@
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { useRef } from "react";
-import { Adaptive, useAdaptiveTriggers } from "./AdaptiveHook";
-import { PageName, ParallaxConfig } from "./ParallaxConfig";
+import { ResolutionSize, useAdaptiveTriggers } from "./config/AdaptiveHook";
+import { PageName } from "./config/ParallaxConfig";
 
 import ParallaxComposition from "./ParallaxComposition";
-import ParchmentPlayer from "../ParchmentPlayer";
-import LinkPage from "./LinkPage";
+import PlayerParchment from "./PlayerParchment";
+import LinkBanner from "./LinkBanner";
+import { ParallaxResolutionConfig } from "./config/ParallaxResolutionConfig";
 
-function ParallaxComponent({ children }: { children: any }) {
-    const width: Adaptive = useAdaptiveTriggers({});
+function ParallaxComponent() {
+    const width: ResolutionSize = useAdaptiveTriggers({});
     const parallax = useRef<IParallax>(null!);
 
     return (
-
         <Parallax
-            pages={ParallaxConfig[width].pages}
+            pages={ParallaxResolutionConfig[width].pages}
             ref={parallax}
             key={width}
             className="parallaxContainer"
         >
-            {/* Inverted Sens */}
+            {/* Player/Links Layer */}
             <ParallaxLayer
                 sticky={{
                     start: 0,
@@ -28,58 +28,57 @@ function ParallaxComponent({ children }: { children: any }) {
                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'space-between' }}
             >
                 <div className="linkPage">
-                    <LinkPage></LinkPage>
+                    <LinkBanner></LinkBanner>
                 </div>
 
                 <div >
-                    <ParchmentPlayer refScroll={parallax}></ParchmentPlayer>
+                    <PlayerParchment refScroll={parallax}></PlayerParchment>
                 </div>
             </ParallaxLayer>
 
-            {/* Flowerdustr */}
-            <div id="flowerDust">
-                <ParallaxComposition  >
-                    {defineProps(children, PageName.flowerDust, parallax, width)}
-                </ParallaxComposition>
+            {/* Flowerdust */}
+            <div className="parallaxCompositionsContainer">
+                <div id="flowerDust">
+                    <ParallaxComposition >
+                        {defineProps(PageName.flowerDust, width)}
+                    </ParallaxComposition>
+                </div>
+
+                {/* CloudFalls */}
+                <div id="cloudFalls">
+                    <ParallaxComposition >
+                        {defineProps(PageName.cloudFalls, width)}
+                    </ParallaxComposition>
+                </div>
+
+                {/* Fire */}
+                <div id="fire">
+                    <ParallaxComposition>
+                        {defineProps(PageName.fire, width)}
+                    </ParallaxComposition>
+                </div>
+
+                {/* NeverCatch */}
+                <div id="neverCatch">
+                    <ParallaxComposition >
+                        {defineProps(PageName.neverCatch, width)}
+                    </ParallaxComposition>
+                </div>
             </div>
 
-            {/* CloudFalls */}
-            <div id="cloudFalls">
-                <ParallaxComposition >
-                    {defineProps(children, PageName.cloudFalls, parallax, width)}
-                </ParallaxComposition>
-            </div>
-
-            {/* Fire */}
-            <div id="fire">
-                <ParallaxComposition >
-                    {defineProps(children, PageName.fire, parallax, width)}
-                </ParallaxComposition>
-            </div>
-
-            {/* NeverCatch */}
-            <div id="neverCatch">
-                <ParallaxComposition >
-                    {defineProps(children, PageName.neverCatch, parallax, width)}
-                </ParallaxComposition>
-            </div>
         </Parallax >
     )
 }
 
 /**
  * Define props for the Parallax Composition
- * @param children : the information Ref from parents
  * @param compositionName : the name of the composition use to get offset by composition and images
- * @param parallax 
- * @param width 
+ * @param width : the size of the current screen used
  * @returns 
  */
-function defineProps(children: any, compositionName: PageName, parallax: React.MutableRefObject<IParallax>, width: Adaptive): any {
+function defineProps(compositionName: PageName, width: ResolutionSize): any {
     return {
-        children: children,
         width: width,
-        parallax: parallax,
         pageName: compositionName
     };
 }

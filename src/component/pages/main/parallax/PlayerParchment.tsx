@@ -1,9 +1,7 @@
 import { IParallax } from "@react-spring/parallax";
 import { useState } from "react";
-import { AudioMap } from "../shared/GlobalConfig";
-import { PageName, ReleasedTrack } from "./parallax/ParallaxConfig";
-
-// Released tracks list
+import { AudioMap } from "../../shared/GlobalConfig";
+import { PageName, ReleasedTrack } from "./config/ParallaxConfig";
 
 function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }) {
     setEndingAudioListener();
@@ -258,13 +256,13 @@ function ParchmentPlayer(props: { refScroll: React.MutableRefObject<IParallax> }
         const audio = AudioMap.get(pageName);
         audio!.volume = 0.0;
         audio?.play();
-        let interval = setInterval(function () {
-            if (audio!.volume > 0.99) {
-                clearInterval(interval);
-                return;
-            }
-            audio!.volume += 0.1;
-        }, 200);
+        // let interval = setInterval(function () {
+        //     if (audio!.volume > 0.99) {
+        //         clearInterval(interval);
+        //         return;
+        //     }
+        //     audio!.volume += 0.1;
+        // }, 200);
     }
 }
 

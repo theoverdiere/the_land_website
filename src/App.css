@@ -39,15 +39,26 @@ body {
 
 /* Main */
 
+
 .parallaxContainer {
     background-color: black;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+
+
+.COMP {
+    display: flex;
+    justify-content: center;
 }
 
 .linkPageContainer {
     display: flex;
     margin-top: 10px;
     width: 100vw;
-    /* background-color: blue; */
 }
 
 .linkPageSvg {
@@ -57,20 +68,6 @@ body {
 
 .linkPageDiv {
     width: 85vw;
-}
-
-
-/* Couche superieure */
-.grainLayer {
-    /* height: 100vh; */
-    background-color: white;
-    opacity: 0.5;
-    /* z-index: 2;
-    position: relative;
-    height: 100vh;
-    background-color: red;
-    background-attachment: fixed;
-     */
 }
 
 *:focus {

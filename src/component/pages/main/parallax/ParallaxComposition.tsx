@@ -1,22 +1,27 @@
 
-import { PageCompositions, PageName, ParallaxConfig } from "./ParallaxConfig";
+import { PageCompositions, PageName } from "./config/ParallaxConfig";
 import { ParallaxLayer } from "@react-spring/parallax";
-import { Adaptive } from "./AdaptiveHook";
+import { ResolutionSize } from "./config/AdaptiveHook";
+import { ParallaxResolutionConfig } from "./config/ParallaxResolutionConfig";
 
-function ParallaxComposition({ children }: { children: any }) {
-    const width: Adaptive = children.width;
+function ParallaxComposition({ children }: { children: { width: ResolutionSize, pageName: PageName } }) {
+
+    const width: ResolutionSize = children.width;
     const pageName: PageName = children.pageName;
 
-    const pageConfig = ParallaxConfig[width][pageName];
+
+    const parallaxResolutionConfig = ParallaxResolutionConfig[width];
+    const widthConfig = parallaxResolutionConfig.largeur;
+    const pageConfig = parallaxResolutionConfig[pageName];
     const composition = PageCompositions[pageName];
 
     return (
-        <div>
+        <div className="COMP">
             <ParallaxLayer id="picture"
                 offset={pageConfig.picture.offset}
                 speed={pageConfig.picture.speed}
             >
-                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                <div style={{ width: widthConfig }}>
                     {composition.imagesUris.pictureSvg}
                 </div>
             </ParallaxLayer>
@@ -24,7 +29,7 @@ function ParallaxComposition({ children }: { children: any }) {
                 offset={pageConfig.junctionTop.offset}
                 speed={pageConfig.junctionTop.speed}
             >
-                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                <div style={{ width: widthConfig }}>
                     {composition.imagesUris.junctionTopUri}
                 </div>
             </ParallaxLayer>
@@ -32,7 +37,7 @@ function ParallaxComposition({ children }: { children: any }) {
                 offset={pageConfig.junctionBottom.offset}
                 speed={pageConfig.junctionBottom.speed}
             >
-                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                <div style={{ width: widthConfig }}>
                     {composition.imagesUris.junctionBottomUri}
                 </div>
             </ParallaxLayer>

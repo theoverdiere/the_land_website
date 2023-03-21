@@ -1,4 +1,4 @@
-import { PageName } from "../main/parallax/ParallaxConfig";
+import { PageName } from "../main/parallax/config/ParallaxConfig";
 
 export enum RouteConfig {
     portalPage = '/the_land_website',

@@ -17,9 +17,15 @@ function Main() {
         }
     }
     return (
-        <motion.div id="Main" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
-            <ParallaxComponent>
-            </ParallaxComponent>
+        <motion.div variants={containerVariants} initial="hidden" animate="visible" exit="exit" >
+            {/* Ajout d'une règle ts-ignore car la librairie n'est pas à jour (React18) */}
+
+            <div>
+                {/* @ts-ignore */}
+                <ParallaxComponent>
+                </ParallaxComponent>
+            </div>
+
         </motion.div>
     )
 }
