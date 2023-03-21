@@ -17,12 +17,43 @@ export enum ResolutionSize {
   tablette980 = 'tablette980',
   tablette1040 = 'tablette1040',
 
-  desktop1440 = 'laptop',
-  desktop = 'laptopL'
+  laptop = 'laptop',
+  laptopL = 'laptopL'
+}
+
+export enum DeviceModelSize {
+  small = 'small',
+  medium = 'medium'
 }
 
 interface UseAdaptiveTriggersProps {
   onEnter?: () => void
+}
+
+export const DeviceModelSizeConfig: Record<ResolutionSize, DeviceModelSize> = {
+
+  //Small
+  mobile320: DeviceModelSize.small,
+  mobile380: DeviceModelSize.small,
+  mobile440: DeviceModelSize.small,
+  mobile500: DeviceModelSize.small,
+
+  // Medium
+  tablette560: DeviceModelSize.medium,
+  tablette620: DeviceModelSize.medium,
+  tablette680: DeviceModelSize.medium,
+  tablette740: DeviceModelSize.medium,
+  tablette800: DeviceModelSize.medium,
+  tablette860: DeviceModelSize.medium,
+  tablette920: DeviceModelSize.medium,
+  tablette980: DeviceModelSize.medium,
+  tablette1040: DeviceModelSize.medium,
+
+  // Large
+  laptop: DeviceModelSize.medium,
+  laptopL: DeviceModelSize.medium
+
+
 }
 
 export const useAdaptiveTriggers = ({
@@ -79,15 +110,16 @@ export const useAdaptiveTriggers = ({
 
         // Desktop
         if (window?.innerWidth <= 1440) {
-          return setWidth(ResolutionSize.desktop1440)
+          return setWidth(ResolutionSize.laptop)
         }
 
-        return setWidth(ResolutionSize.desktop)
+        return setWidth(ResolutionSize.laptopL)
       }
 
     window.addEventListener('resize', handleResize)
     handleResize()
     return () => window.removeEventListener('resize', handleResize)
   }, [onEnter])
+
   return width
 }

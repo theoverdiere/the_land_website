@@ -31,7 +31,7 @@ function ParallaxComponent() {
                     <LinkBanner></LinkBanner>
                 </div>
 
-                <div >
+                <div>
                     <PlayerParchment refScroll={parallax}></PlayerParchment>
                 </div>
             </ParallaxLayer>

@@ -1,7 +1,7 @@
 
 import { PageCompositions, PageName } from "./config/ParallaxConfig";
 import { ParallaxLayer } from "@react-spring/parallax";
-import { ResolutionSize } from "./config/AdaptiveHook";
+import { DeviceModelSizeConfig, ResolutionSize } from "./config/AdaptiveHook";
 import { ParallaxResolutionConfig } from "./config/ParallaxResolutionConfig";
 
 function ParallaxComposition({ children }: { children: { width: ResolutionSize, pageName: PageName } }) {
@@ -9,14 +9,18 @@ function ParallaxComposition({ children }: { children: { width: ResolutionSize, 
     const width: ResolutionSize = children.width;
     const pageName: PageName = children.pageName;
 
+    const deviceModelSize = DeviceModelSizeConfig[width];
 
+    // Give specifics parallax parameters by device resolution
     const parallaxResolutionConfig = ParallaxResolutionConfig[width];
     const widthConfig = parallaxResolutionConfig.largeur;
     const pageConfig = parallaxResolutionConfig[pageName];
-    const composition = PageCompositions[pageName];
+
+    // Give composition models by device model size
+    const composition = PageCompositions[deviceModelSize][pageName];
 
     return (
-        <div className="COMP">
+        <div className="parallaxComposition">
             <ParallaxLayer id="picture"
                 offset={pageConfig.picture.offset}
                 speed={pageConfig.picture.speed}

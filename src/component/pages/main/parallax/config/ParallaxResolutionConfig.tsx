@@ -317,7 +317,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
 
     [ResolutionSize.tablette560]: {
         pages: 4,
-        largeur: '90%',
+        largeur: '100%',
         [PageName.none]: {
             [GraphicParts.picture]: {
                 offset: 0,
@@ -392,7 +392,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
 
     [ResolutionSize.tablette620]: {
         pages: 4,
-        largeur: '90%',
+        largeur: '100%',
         [PageName.none]: {
             [GraphicParts.picture]: {
                 offset: 0,
@@ -467,7 +467,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
 
     [ResolutionSize.tablette680]: {
         pages: 4,
-        largeur: '90%',
+        largeur: '100%',
         [PageName.none]: {
             [GraphicParts.picture]: {
                 offset: 0,
@@ -542,7 +542,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
 
     [ResolutionSize.tablette740]: {
         pages: 4,
-        largeur: '90%',
+        largeur: '100%',
         [PageName.none]: {
             [GraphicParts.picture]: {
                 offset: 0,
@@ -617,7 +617,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
 
     [ResolutionSize.tablette800]: {
         pages: 4,
-        largeur: '90%',
+        largeur: '100%',
         [PageName.none]: {
             [GraphicParts.picture]: {
                 offset: 0,
@@ -692,7 +692,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
 
     [ResolutionSize.tablette860]: {
         pages: 4,
-        largeur: '90%',
+        largeur: '100%',
         [PageName.none]: {
             [GraphicParts.picture]: {
                 offset: 0,
@@ -767,7 +767,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
 
     [ResolutionSize.tablette920]: {
         pages: 4,
-        largeur: '90%',
+        largeur: '100%',
         [PageName.none]: {
             [GraphicParts.picture]: {
                 offset: 0,
@@ -994,7 +994,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
      * DESKTOP RESOLUTION
      * ##################*/
 
-    [ResolutionSize.desktop1440]: {
+    [ResolutionSize.laptop]: {
         pages: 4,
         largeur: '50%',
         [PageName.none]: {
@@ -1069,7 +1069,7 @@ export const ParallaxResolutionConfig: Record<ResolutionSize, Record<PageName, R
         }
     },
 
-    [ResolutionSize.desktop]: {
+    [ResolutionSize.laptopL]: {
         pages: 4,
         largeur: '25%',
         [PageName.none]: {
