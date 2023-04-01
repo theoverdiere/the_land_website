@@ -42,19 +42,26 @@ body {
 
 .parallaxContainer {
     background-color: black;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+    text-align: center;
+
 }
 
-
-
-.parallaxComposition {
+.parallaxElement {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+
 }
 
+.borderLargeScreen {
+    border-left: solid white 0.5rem;
+    border-right: solid white 0.5rem;
+}
+
+.linkBanner {}
+
+
+/* Links Menus */
 .linkPageContainer {
     display: flex;
     margin-top: 10px;

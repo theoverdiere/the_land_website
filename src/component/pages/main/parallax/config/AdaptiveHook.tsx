@@ -5,8 +5,9 @@ export enum ResolutionSize {
   mobile320 = 'mobile320',
   mobile380 = 'mobile380',
   mobile440 = 'mobile440',
-  mobile500 = 'mobile500',
+  mobile480 = 'mobile480',
   // Tablette
+  tablette500 = 'tablette500',
   tablette560 = 'tablette560',
   tablette620 = 'tablette620',
   tablette680 = 'tablette680',
@@ -36,9 +37,10 @@ export const DeviceModelSizeConfig: Record<ResolutionSize, DeviceModelSize> = {
   mobile320: DeviceModelSize.small,
   mobile380: DeviceModelSize.small,
   mobile440: DeviceModelSize.small,
-  mobile500: DeviceModelSize.small,
+  mobile480: DeviceModelSize.small,
 
   // Medium
+  tablette500: DeviceModelSize.medium,
   tablette560: DeviceModelSize.medium,
   tablette620: DeviceModelSize.medium,
   tablette680: DeviceModelSize.medium,
@@ -74,11 +76,14 @@ export const useAdaptiveTriggers = ({
         if (window?.innerWidth <= 440) {
           return setWidth(ResolutionSize.mobile440)
         }
-        if (window?.innerWidth <= 500) {
-          return setWidth(ResolutionSize.mobile500)
+        if (window?.innerWidth <= 480) {
+          return setWidth(ResolutionSize.mobile480)
         }
 
         // Tablette
+        if (window?.innerWidth <= 500) {
+          return setWidth(ResolutionSize.tablette560)
+        }
         if (window?.innerWidth <= 560) {
           return setWidth(ResolutionSize.tablette560)
         }

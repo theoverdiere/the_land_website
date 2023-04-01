@@ -43,29 +43,9 @@ import flowerDustSoonMedium from '../config/size/mediumSvgSize/flowerDust/flower
 import flowerDustJunctionTopMedium from '../config/size/mediumSvgSize/flowerDust/flowerDustJunctionTopMedium.svg';
 import flowerDustJunctionBottomMedium from '../config/size/mediumSvgSize/flowerDust/flowerDustJunctionBottomMedium.svg';
 
-// import junctionNeverCatchBottom from './imgs/neverCatch/junction_bottom_nevercatch.svg';
-// import junctionNeverCatchTop from './imgs/neverCatch/junction_top_nevercatch.svg';
-
-
-// import fireSoon from './imgs/fire/fire_soon.svg';
-// import junctionFireBottom from './imgs/fire/jonction_bottom.svg';
-// import junctionFireTop from './imgs/fire/jonction_top.svg';
-
-// import cloudFallsSoon from './imgs/cloudFalls/cloud_falls_soon.svg';
-// import junctionCloudFallsBottom from './imgs/cloudFalls/jonction_bottom_three.svg';
-// import junctionCloudFallsTop from './imgs/cloudFalls/jonction_top_three.svg';
-
-
-// import flowerdustSoon from './imgs/flowerdust/flowerdust_soon.svg';
-// import junctionFlowerdustBottom from './imgs/flowerdust/jonction_bottom_four.svg';
-// import junctionFlowerdustTop from './imgs/flowerdust/jonction_top_four.svg';
-
-// import CloudFallsSvg from './imgs/cloudFalls/CloudFallsSvg';
-// import FireSvg from './imgs/fire/FireSvg';
-// import FlowerdustSvg from './imgs/flowerdust/FlowerdustSvg';
-// import NeverCatchSvg from './imgs/neverCatch/NeverCatchSvg';
-
 import { DeviceModelSize } from './AdaptiveHook';
+import NeverCatchMediumSvg from './size/mediumSvgSize/neverCatch/NeverCatchMediumSvg';
+import NeverCatchSmallSvg from './size/smallSvgSize/neverCatch/NeverCatchSmallSvg';
 
 
 export enum PageName {
@@ -76,7 +56,7 @@ export enum PageName {
   flowerDust = 'flowerDust',
 }
 
-export const ReleasedTrack = [PageName.neverCatch];
+export const ReleasedTrack = [PageName.neverCatch, PageName.fire, PageName.cloudFalls, PageName.flowerDust];
 
 export interface PageComposition {
   imagesUris: {
@@ -93,7 +73,7 @@ export const PageCompositions: Record<DeviceModelSize, Record<PageName, PageComp
     },
     [PageName.neverCatch]: {
       imagesUris: {
-        pictureSvg: <img src={neverCatchSmall}></img>,
+        pictureSvg: <NeverCatchSmallSvg></NeverCatchSmallSvg>,
         junctionTopUri: <img alt="NeverCatch Fire Junction Top" src={neverCatchJunctionTopSmall} />,
         junctionBottomUri: <img alt="NeverCatch Fire Junction Bottom" src={neverCatchJunctionBottomSmall} />
 
@@ -101,21 +81,21 @@ export const PageCompositions: Record<DeviceModelSize, Record<PageName, PageComp
     },
     [PageName.fire]: {
       imagesUris: {
-        pictureSvg: ReleasedTrack.includes(PageName.fire) ? <img src={fireSmall}></img> : <img alt="Fire Track Soon Released!" src={fireSoonSmall} />,
+        pictureSvg: ReleasedTrack.includes(PageName.fire) ? <img alt="Fire Track" src={fireSmall}></img> : <img alt="Fire Track Soon Released!" src={fireSoonSmall} />,
         junctionTopUri: <img alt="Fire Cloud Falls Junction Top" src={fireJunctionTopSmall} />,
         junctionBottomUri: <img alt="Fire Cloud Falls Junction Bottom" src={fireJunctionBottomSmall} />
       }
     },
     [PageName.cloudFalls]: {
       imagesUris: {
-        pictureSvg: ReleasedTrack.includes(PageName.cloudFalls) ? <img src={cloudsFallSmall}></img> : <img alt="Cloud Falls Track Soon Released!" src={cloudsFallSoonSmall} />,
+        pictureSvg: ReleasedTrack.includes(PageName.cloudFalls) ? <img alt="CloudsFall Track" src={cloudsFallSmall}></img> : <img alt="Cloud Falls Track Soon Released!" src={cloudsFallSoonSmall} />,
         junctionTopUri: <img alt="Cloud Falls Flowerdust Junction Top" src={cloudsFallJunctionTopSmall} />,
         junctionBottomUri: <img alt="Cloud Falls Flowerdust Junction Bottom" src={cloudsFallJunctionBottomSmall} />
       }
     },
     [PageName.flowerDust]: {
       imagesUris: {
-        pictureSvg: ReleasedTrack.includes(PageName.flowerDust) ? <img src={flowerDustSmall}></img> : <img alt="Flowerdust Track Soon Released!" src={flowerDustSoonSmall} />,
+        pictureSvg: ReleasedTrack.includes(PageName.flowerDust) ? <img alt="FlowerDust Track" src={flowerDustSmall}></img> : <img alt="Flowerdust Track Soon Released!" src={flowerDustSoonSmall} />,
         junctionTopUri: <img alt="Flowerdust Junction Top" src={flowerDustJunctionTopSmall} />,
         junctionBottomUri: <img alt="Flowerdust Junction Bottom" src={flowerDustJunctionBottomSmall} />
       }
@@ -127,7 +107,7 @@ export const PageCompositions: Record<DeviceModelSize, Record<PageName, PageComp
     },
     [PageName.neverCatch]: {
       imagesUris: {
-        pictureSvg: <img src={neverCatchMedium}></img>,
+        pictureSvg: <NeverCatchMediumSvg></NeverCatchMediumSvg>,
         junctionTopUri: <img alt="NeverCatch Fire Junction Top" src={neverCatchJunctionTopMedium} />,
         junctionBottomUri: <img alt="NeverCatch Fire Junction Bottom" src={neverCatchJunctionBottomMedium} />
 
@@ -173,8 +153,3 @@ export interface LayoutConfig {
   pages: number
   largeur: string
 }
-
-
-
-
-

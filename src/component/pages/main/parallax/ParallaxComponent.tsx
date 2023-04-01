@@ -13,60 +13,66 @@ function ParallaxComponent() {
     const parallax = useRef<IParallax>(null!);
 
     return (
-        <Parallax
-            pages={ParallaxResolutionConfig[width].pages}
-            ref={parallax}
-            key={width}
-            className="parallaxContainer"
-        >
-            {/* Player/Links Layer */}
-            <ParallaxLayer
-                sticky={{
-                    start: 0,
-                    end: 4
-                }}
-                style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'space-between' }}
+        <div>
+            <Parallax
+                pages={ParallaxResolutionConfig[width].pages}
+                ref={parallax}
+                key={width}
+                className="parallaxContainer"
             >
-                <div className="linkPage">
-                    <LinkBanner></LinkBanner>
-                </div>
+                {/* Player/Links Layer */}
+                <ParallaxLayer
+                    sticky={{
+                        start: 0,
+                        end: 4
+                    }}
+                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'space-between', width: '25%' }}
+                >
+                    <div className="linkBanner">
+                        <LinkBanner></LinkBanner>
+                    </div>
 
-                <div>
-                    <PlayerParchment refScroll={parallax}></PlayerParchment>
-                </div>
-            </ParallaxLayer>
+                    <div className="linkParchment">
+                        <PlayerParchment refScroll={parallax}></PlayerParchment>
+                    </div>
+                </ParallaxLayer>
 
-            {/* Flowerdust */}
-            <div className="parallaxCompositionsContainer">
-                <div id="flowerDust">
-                    <ParallaxComposition >
-                        {defineProps(PageName.flowerDust, width)}
-                    </ParallaxComposition>
-                </div>
 
-                {/* CloudFalls */}
-                <div id="cloudFalls">
-                    <ParallaxComposition >
-                        {defineProps(PageName.cloudFalls, width)}
-                    </ParallaxComposition>
-                </div>
+                <ParallaxLayer>
 
-                {/* Fire */}
-                <div id="fire">
-                    <ParallaxComposition>
-                        {defineProps(PageName.fire, width)}
-                    </ParallaxComposition>
-                </div>
+                    {/* Flowerdust */}
+                    <div id="flowerDust">
+                        <ParallaxComposition >
+                            {defineProps(PageName.flowerDust, width)}
+                        </ParallaxComposition>
+                    </div>
 
-                {/* NeverCatch */}
-                <div id="neverCatch">
-                    <ParallaxComposition >
-                        {defineProps(PageName.neverCatch, width)}
-                    </ParallaxComposition>
-                </div>
-            </div>
+                    {/* CloudFalls */}
+                    <div id="cloudFalls">
+                        <ParallaxComposition >
+                            {defineProps(PageName.cloudFalls, width)}
+                        </ParallaxComposition>
+                    </div>
 
-        </Parallax >
+                    {/* Fire */}
+                    <div id="fire">
+                        <ParallaxComposition>
+                            {defineProps(PageName.fire, width)}
+                        </ParallaxComposition>
+                    </div>
+
+                    {/* NeverCatch */}
+                    <div id="neverCatch">
+                        <ParallaxComposition >
+                            {defineProps(PageName.neverCatch, width)}
+                        </ParallaxComposition>
+                    </div>
+
+                </ParallaxLayer>
+
+            </Parallax >
+        </div>
+
     )
 }
 
