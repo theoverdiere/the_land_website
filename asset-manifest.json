@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/the_land_website/static/css/main.1cf06acc.css",
-    "main.js": "/the_land_website/static/js/main.7a440f0a.js",
+    "main.js": "/the_land_website/static/js/main.89938c2e.js",
     "static/js/787.c08a3c3c.chunk.js": "/the_land_website/static/js/787.c08a3c3c.chunk.js",
     "static/media/cloudsFallMedium.svg": "/the_land_website/static/media/cloudsFallMedium.ef3a7214205323908cc60ee9cc7f0ee6.svg",
     "static/media/fireMedium.svg": "/the_land_website/static/media/fireMedium.bf1cfc9498129331194fb2d584cfadd7.svg",
     "static/media/cloudsFallSmall.svg": "/the_land_website/static/media/cloudsFallSmall.5f50426a61c04906073745cc2aac3cdb.svg",
+    "static/media/neverCatchSmall.svg": "/the_land_website/static/media/neverCatchSmall.dd564f20df928b1e96bc327965a566cf.svg",
     "static/media/fireSmall.svg": "/the_land_website/static/media/fireSmall.b47100f6a276a340894701b6fae5a7fc.svg",
     "static/media/neverCatchJunctionTopMedium.svg": "/the_land_website/static/media/neverCatchJunctionTopMedium.2137d0556ad3417f4832d4f6e552c396.svg",
     "static/media/neverCatchJunctionTopSmall.svg": "/the_land_website/static/media/neverCatchJunctionTopSmall.8ebb4254faf96b753c7b2d24528393fe.svg",
@@ -33,11 +34,11 @@
     "static/media/flowerDustSoonSmall.svg": "/the_land_website/static/media/flowerDustSoonSmall.eb4392733c492a3fdeb8399e5bbb520f.svg",
     "index.html": "/the_land_website/index.html",
     "main.1cf06acc.css.map": "/the_land_website/static/css/main.1cf06acc.css.map",
-    "main.7a440f0a.js.map": "/the_land_website/static/js/main.7a440f0a.js.map",
+    "main.89938c2e.js.map": "/the_land_website/static/js/main.89938c2e.js.map",
     "787.c08a3c3c.chunk.js.map": "/the_land_website/static/js/787.c08a3c3c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1cf06acc.css",
-    "static/js/main.7a440f0a.js"
+    "static/js/main.89938c2e.js"
   ]
 }
